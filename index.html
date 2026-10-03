@@ -791,7 +791,7 @@ textarea.ctl{resize:none}
 const SUPABASE_URL = 'https://wekdopgrtqrizmznbirf.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_Q04s3B217vNsJtmtrGiHmA_oRwLU67Z'; // chave pública (publishable)
 const sb = (path, opts = {}) => fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
-  ...opts, headers: { apikey: SUPABASE_KEY, 'Content-Type': 'application/json', ...(opts.headers || {}) }
+  ...opts, headers: { apikey: SUPABASE_KEY, ...(opts.body ? { 'Content-Type': 'application/json' } : {}), ...(opts.headers || {}) }
 });
 
 /* ---------- Conteúdo de reserva (usado se o banco não responder) ---------- */
