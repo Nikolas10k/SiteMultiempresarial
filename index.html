@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Multiempresarial — Condomínio do Edifício Novo Centro Multiempresarial</title>
+<meta name="description" content="Condomínio do Edifício Novo Centro Multiempresarial — escritórios comerciais em localização privilegiada no centro de Brasília. SRTVS Quadra 701, Bloco O." />
+<meta name="theme-color" content="#0c1412" />
+<link rel="icon" href="assets/logo-multiempresarial.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --background:#ffffff; --foreground:#111816; --ink:#0c1412;
+  --muted:#7f8a87; --subtle:#b3bcb9; --line:#e2e6e5;
+  --surface:#eef1f0; --surface-2:#dfe4e3;
+  --accent:#2f7a64; --accent-from:#7cc8b3; --accent-to:#245f4e;
+  --alert:#b8241c; --hero-to:#c7cfcd;
+  --r-pill:9999px; --r-card:2rem; --r-card-sm:1.25rem; --r-ctl:.875rem;
+  --spring:cubic-bezier(.16,1,.3,1); --snap:cubic-bezier(.2,.8,.2,1);
+  --line-ease:cubic-bezier(.215,.61,.355,1); --word-ease:cubic-bezier(.165,.84,.44,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:var(--foreground);font-family:'Onest',sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:none;cursor:pointer}
+ul{list-style:none}
+img{display:block;max-width:100%;height:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:1920px){html{font-size:.833333vw}}
+@media (max-width:1440px){html{font-size:1.111111vw}}
+@media (max-width:1024px){html{font-size:1.5625vw}}
+@media (max-width:640px){html{font-size:4.444444vw}}
+
+.ic{width:1em;height:1em;flex:none;display:inline-block;vertical-align:middle}
+.shell{max-width:88rem;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:640px){.shell{padding-inline:2rem}}
+.hide-sm{display:none}@media (min-width:640px){.hide-sm{display:inline}}
+
+/* skip link */
+.skip{position:fixed;left:1rem;top:-4rem;z-index:130;border-radius:var(--r-ctl);background:var(--ink);padding:.5rem 1rem;font-size:.875rem;color:#fff}
+.skip:focus{top:1rem}
+
+/* reveals */
+.js .reveal{opacity:0;transform:translateY(var(--y,16px)) scale(var(--s,1));transition:opacity .8s var(--spring),transform .8s var(--spring);transition-delay:var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+.lines .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.lines .ln>span{display:block}
+.js .lines .ln>span{transform:translateY(100%);opacity:0;transition:transform .9s var(--line-ease),opacity .9s var(--line-ease);transition-delay:calc(var(--d,0ms) + var(--i,0)*var(--stag,0ms))}
+.js .lines.in .ln>span{transform:none;opacity:1}
+.words .w{display:inline-block}
+.js .words .w{opacity:0;transform:translateY(24px);transition:opacity .7s var(--word-ease),transform .7s var(--word-ease);transition-delay:calc(var(--i)*35ms)}
+.js .words.in .w{opacity:1;transform:none}
+
+/* eyebrow */
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:500;color:rgba(17,24,22,.7)}
+.eyebrow::before{content:"";width:.375rem;height:.375rem;border-radius:9999px;background:var(--accent)}
+.eyebrow--light{color:rgba(255,255,255,.7)}
+.eyebrow--light::before{background:var(--accent-from)}
+.eyebrow--boxed{border:1px solid var(--line);border-radius:9999px;padding:.375rem 1rem}
+
+/* pill button */
+.pill{display:inline-flex;align-items:center;gap:.75rem;border-radius:9999px;font-size:.875rem;font-weight:500;padding:.875rem 1.75rem;transition:transform .35s var(--snap),background-color .3s;white-space:nowrap}
+.pill.has-arrow{padding:.375rem .375rem .375rem 1.5rem}
+.pill--dark{background:var(--ink);color:#fff}
+.pill--light{background:var(--surface);color:var(--foreground)}
+.pill--outline{border:1px solid var(--line);color:var(--foreground)}
+.pill--glass{border:1px solid rgba(17,24,22,.2);background:rgba(255,255,255,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.pill__badge{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:9999px;font-size:1rem;background:var(--ink);color:#fff}
+.pill--dark .pill__badge{background:#fff;color:var(--ink)}
+.pill__badge .ic{transition:transform .35s var(--snap)}
+@media (hover:hover){
+  .pill:hover{transform:scale(1.04)}
+  .pill:hover .arr-r{transform:translate(3px,0)}
+  .pill:hover .arr-ur{transform:translate(2px,-2px)}
+}
+.alink{display:inline-flex}
+.alink>span{display:inline-block;opacity:.65;transition:transform .35s var(--snap),opacity .35s}
+@media (hover:hover){.alink:hover>span{transform:translateX(4px);opacity:1}}
+
+/* loader */
+.loader{position:fixed;inset:0;z-index:120;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;background:var(--ink);color:#fff;border-radius:0 0 2rem 2rem;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+html:not(.js) .loader{display:none}
+.loader.out{transform:translateY(-100%)}
+.loader__c{display:flex;flex-direction:column;align-items:center;gap:1.25rem;text-align:center;transition:opacity .6s var(--spring),transform .6s var(--spring)}
+.loader.out .loader__c{opacity:0;transform:translateY(-12px)}
+.loader__brand{display:flex;align-items:center;gap:.75rem;font-weight:600;font-size:1.5rem}
+.loader__brand .ic{font-size:2.25rem}
+.loader__sub{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);max-width:22rem}
+.loader__tag{max-width:28ch;font-size:.875rem;color:rgba(255,255,255,.6)}
+.loader__p{width:min(22rem,72vw);display:flex;flex-direction:column;gap:.75rem}
+.loader__track{height:1px;background:rgba(255,255,255,.15)}
+.loader__fill{height:100%;width:0;background:var(--accent-from);transition:width .1s ease-out}
+.loader__row{display:flex;justify-content:space-between;font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.45)}
+.loader__n{font-variant-numeric:tabular-nums;color:rgba(255,255,255,.8)}
+@media (min-width:640px){.loader__brand{font-size:1.875rem}}
+
+/* header */
+.header{position:absolute;inset-inline:0;top:0;z-index:50}
+.header__in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1.25rem}
+@media (min-width:640px){.header__in{padding-block:1.5rem}}
+.brand{display:flex;align-items:center;gap:.5rem;font-size:1.125rem;font-weight:600;letter-spacing:-.01em;transition:transform .35s var(--snap)}
+.brand .ic{font-size:1.5rem;color:var(--accent)}
+@media (hover:hover){.brand:hover{transform:scale(1.04)}}
+.pnav{display:none}
+@media (min-width:1280px){.pnav{display:flex}}
+.pnav>ul{display:flex;gap:2rem;font-size:.875rem;font-weight:500}
+.pnav li{position:relative}
+.pnav button,.pnav a{display:inline-flex;align-items:center;gap:.25rem;opacity:.8;transition:transform .35s var(--snap),opacity .35s}
+.pnav [aria-current]{opacity:1}
+@media (hover:hover){.pnav>ul>li>button:hover{transform:translateY(-2px);opacity:1}}
+.pnav .chev{font-size:.75rem;opacity:.6}
+.dd{position:absolute;top:calc(100% + .75rem);left:-1rem;min-width:16rem;border-radius:var(--r-card-sm);background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 20px 40px -20px rgba(12,20,18,.35);outline:1px solid var(--line);padding:.5rem;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .25s,transform .25s,visibility 0s .25s}
+.dd::before{content:"";position:absolute;inset:-.75rem 0 auto;height:.75rem}
+.has-dd.open .dd{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}
+@media (hover:hover){.has-dd:hover .dd{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}}
+.dd button{display:block!important;width:100%;text-align:left;padding:.6rem .875rem;border-radius:var(--r-ctl);font-size:.875rem;opacity:1!important}
+.dd button:hover,.dd button:focus-visible{background:var(--surface)}
+.hright{display:flex;align-items:center;gap:.5rem}
+.chip{display:flex;white-space:nowrap;align-items:center;border:1px solid rgba(226,230,229,.8);background:rgba(255,255,255,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-radius:var(--r-ctl);transition:background-color .3s}
+.clock{display:none;gap:.75rem;padding:.5rem .75rem;font-size:.75rem}
+@media (min-width:768px){.clock{display:flex}}
+.clock__l{color:rgba(17,24,22,.45)}
+.clock__t{min-width:2.75rem;font-variant-numeric:tabular-nums;font-weight:500}
+.clock__s{color:rgba(17,24,22,.3)}
+.clock__d{font-weight:500}
+@media (max-width:1535px){.clock__d,.clock__s{display:none}}
+.chipbtn{gap:.5rem;padding:.5rem 1rem;font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em}
+.chipbtn>span{display:flex;align-items:center;gap:.5rem;transition:transform .35s var(--snap)}
+@media (hover:hover){.chipbtn:hover{background:rgba(255,255,255,.75)}.chipbtn:hover>span{transform:scale(1.05)}}
+.chipbtn .lbl-lg{display:none}
+@media (min-width:1536px){.chipbtn .lbl-lg{display:inline}}
+.chipbtn .lbl-sm{display:none}
+@media (min-width:640px){.chipbtn .lbl-sm{display:inline}}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;border-radius:0 0 2rem 2rem;background:var(--hero-to)}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img,.hero__bg canvas{position:absolute;inset:0;width:100%;height:100%}
+.hero__bg img{object-fit:cover;object-position:center 35%;transform:scale(1.08);filter:grayscale(1) contrast(1.05) brightness(1.12)}
+.hero.no-liquid .hero__bg img{filter:none}
+.hero__bg canvas{pointer-events:none}
+.hero__vig{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to bottom,rgba(255,255,255,.55),rgba(255,255,255,.1) 45%,rgba(255,255,255,.55))}
+.wm{white-space:nowrap;font-weight:700;line-height:1;letter-spacing:-.03em;font-size:min(8.6vw,20rem);text-align:center;pointer-events:none;user-select:none;-webkit-user-select:none}
+.hero__wm{position:absolute;inset-inline:0;bottom:6rem;z-index:1;color:rgba(255,255,255,.45)}
+.hero__grid{position:relative;z-index:20;display:flex;flex-direction:column;gap:2rem;padding-top:7rem;padding-bottom:5rem}
+@media (min-width:1024px){.hero__grid{display:grid;min-height:100lvh;grid-template-columns:repeat(12,1fr);gap:2.5rem;padding-top:9rem;padding-bottom:7rem}}
+.hero__l{display:flex;flex-direction:column;gap:1.75rem;justify-content:center}
+@media (min-width:1024px){.hero__l{grid-column:span 7}}
+.hero h1{max-width:18ch;font-size:2.25rem;font-weight:600;line-height:.98;letter-spacing:-.02em}
+@media (min-width:640px){.hero h1{font-size:3rem}}
+@media (min-width:768px){.hero h1{font-size:3.75rem}}
+.hero h1 .acc{color:var(--accent)}
+.hero__info{display:flex;align-items:center;gap:.75rem;font-size:.875rem;font-weight:500;color:rgba(17,24,22,.7)}
+.hero__info .ic{font-size:1.125rem;color:var(--accent)}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero__r{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:2rem}
+@media (min-width:1024px){.hero__r{grid-column:span 5;align-items:flex-end}}
+.qcard{width:100%;max-width:24rem;border-radius:var(--r-card-sm);background:rgba(255,255,255,.72);padding:.5rem;box-shadow:0 1px 2px rgba(0,0,0,.05),0 0 0 1px rgba(226,230,229,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+@media (min-width:1024px){.qcard,.estr{max-width:19rem}}
+.qcard__row{display:flex;gap:.5rem}
+.qcard__tile{aspect-ratio:1;width:6rem;flex:none;display:grid;place-items:center;border-radius:var(--r-ctl);background:var(--ink);font-size:2.25rem}
+.qcard__p{flex:1;border-radius:var(--r-ctl);background:rgba(238,241,240,.75);padding:.75rem;display:flex;flex-direction:column;justify-content:space-between;gap:.5rem}
+.qcard__slot{position:relative;min-height:3.25rem;cursor:pointer;text-align:left;width:100%}
+.qitem{position:absolute;inset:0;transition:opacity .45s var(--spring),transform .45s var(--spring)}
+.qitem.off-up{opacity:0;transform:translateY(-14px)}
+.qitem.off-down{opacity:0;transform:translateY(14px)}
+.qitem__c{display:block;font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:rgba(17,24,22,.45)}
+.qitem__t{display:block;max-width:9rem;font-size:.875rem;font-weight:500;line-height:1.35;margin-top:.15rem}
+.qcard__bot{display:flex;align-items:center;justify-content:space-between}
+.dots{display:flex;gap:.25rem}
+.dots i{height:.25rem;width:.375rem;border-radius:9999px;background:rgba(17,24,22,.2);transition:all .3s}
+.dots i.on{width:1rem;background:rgba(17,24,22,.7)}
+.qnav{display:flex;gap:.25rem}
+.qnav button{width:1.75rem;height:1.75rem;display:grid;place-items:center;border-radius:9999px;background:#fff;color:rgba(17,24,22,.7);box-shadow:0 0 0 1px var(--line);font-size:.875rem;transition:color .2s}
+.qnav button:hover{color:var(--foreground)}
+.qnav .prev .ic{transform:rotate(180deg)}
+.estr{width:100%;max-width:24rem;border-radius:var(--r-card-sm);background:rgba(255,255,255,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 0 0 1px rgba(226,230,229,.7);padding:1rem}
+@media (min-width:1024px){.estr{max-width:19rem}}
+.estr__l{margin-bottom:.75rem;font-size:.75rem;font-weight:500;color:rgba(17,24,22,.55)}
+@media (min-width:1024px){.estr__l{text-align:right}}
+.estr ul{display:grid;grid-template-columns:repeat(2,1fr);column-gap:1rem;row-gap:.75rem}
+.estr li span{display:flex;align-items:center;gap:.375rem;font-size:.75rem;color:rgba(17,24,22,.75);opacity:.85;transition:transform .35s var(--snap),opacity .35s}
+.estr li .ic{font-size:.875rem;color:rgba(47,122,100,.7)}
+@media (hover:hover){.estr li span:hover{transform:translateY(-2px);opacity:1}}
+.hero__bar{position:relative;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:.75rem;border-top:1px solid rgba(17,24,22,.1);padding-block:1.25rem;font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.025em;color:rgba(17,24,22,.6)}
+.hero__bar .mid{display:none}
+@media (min-width:640px){.hero__bar .mid{display:inline}}
+
+/* sobre */
+.sec{background:#fff}
+.sobre{display:grid;grid-template-columns:1fr;align-items:center;gap:3rem;padding-block:5rem}
+@media (min-width:1024px){.sobre{grid-template-columns:1fr 1fr;padding-block:7rem}}
+.photo{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r-card);background:var(--surface-2)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 35%;transform:scale(1.08);transition:transform .8s var(--spring)}
+@media (hover:hover){.photo:hover img{transform:scale(1.12)}}
+.photo__chip{position:absolute;left:1rem;bottom:1rem;display:inline-flex;align-items:center;gap:.5rem;border-radius:9999px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:.5rem 1rem;font-size:.75rem;font-weight:500}
+.photo__chip .ic{color:var(--accent)}
+.stmt{display:flex;flex-direction:column;gap:2.5rem}
+.stmt h2{font-size:1.5rem;font-weight:500;line-height:1.35;letter-spacing:-.01em}
+@media (min-width:640px){.stmt h2{font-size:1.875rem}}
+.stmt .mut{color:var(--muted)}
+.stmt__foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;border-top:1px solid var(--line);padding-top:1.5rem}
+.stmt__lbl{font-size:.875rem;color:rgba(17,24,22,.45);margin-bottom:.75rem}
+.socials{display:flex;gap:.5rem}
+.soc{width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:9999px;font-size:.875rem;background:var(--surface);color:rgba(17,24,22,.7)}
+.soc--acc{background:var(--accent);color:#fff}
+.soc .ic{transition:transform .35s var(--snap)}
+@media (hover:hover){.soc:hover .ic{transform:scale(1.18)}}
+
+/* band */
+.band{display:flex;flex-direction:column;gap:.75rem;padding-block:2.5rem}
+@media (min-width:640px){.band{flex-direction:row;gap:1rem}}
+.band li{flex:1}
+.tile{display:grid;place-items:center;height:6rem;border-radius:9999px;font-size:1.875rem;font-weight:500;transition:transform .35s var(--snap)}
+@media (min-width:640px){.tile{height:10rem;font-size:2.25rem}}
+@media (hover:hover){.tile:hover{transform:scale(1.03)}}
+.tile--light{background:var(--surface)}
+.tile--accent{background:linear-gradient(to bottom right,var(--accent-from),var(--accent-to));color:#fff}
+.tile--dark{background:var(--ink);color:#fff}
+.tile--dark .ic{font-size:2.25rem}
+@media (min-width:640px){.tile--dark .ic{font-size:3rem}}
+.tile--ghost{background:rgba(238,241,240,.6);color:rgba(17,24,22,.35)}
+
+/* section heads */
+.h2{font-size:2.25rem;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+@media (min-width:640px){.h2{font-size:3rem}}
+.h2m{font-size:1.875rem;font-weight:500;letter-spacing:-.01em;line-height:1.15}
+@media (min-width:768px){.h2m{font-size:2.25rem}}
+
+/* avisos */
+.avisos{padding-block:2.5rem 5rem}
+.avisos__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2.5rem}
+.avisos__head .h2{margin-top:1rem}
+.avisos__head p{font-size:.875rem;color:rgba(17,24,22,.55);max-width:22rem}
+.agrid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media (min-width:768px){.agrid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.agrid{grid-template-columns:repeat(3,1fr)}}
+.acard{display:flex;flex-direction:column;gap:1rem;min-height:15rem;height:100%;border-radius:var(--r-card-sm);background:var(--surface);padding:1.5rem;outline:1px solid transparent;transition:transform .45s var(--spring),outline-color .3s}
+@media (hover:hover){.acard:hover{transform:translateY(-6px);outline-color:var(--surface-2)}}
+.acard__top{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:rgba(17,24,22,.5)}
+.acard__top span{display:inline-flex;align-items:center;gap:.375rem}
+.urg{align-self:flex-start;display:inline-flex;align-items:center;gap:.375rem;border-radius:9999px;background:rgba(184,36,28,.1);color:var(--alert);font-size:.7rem;font-weight:600;text-transform:uppercase;padding:.25rem .625rem}
+.urg::before{content:"";width:.375rem;height:.375rem;border-radius:9999px;background:var(--alert);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.acard h3{font-size:1.25rem;font-weight:600;line-height:1.25}
+.acard p{font-size:.875rem;color:rgba(17,24,22,.65);line-height:1.55;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.acard .alink{margin-top:auto;font-size:.875rem;font-weight:500}
+.empty{border-radius:var(--r-card-sm);background:var(--surface);padding:2rem 1.5rem;font-size:.9375rem;color:rgba(17,24,22,.6);display:flex;align-items:center;gap:.75rem}
+.empty .ic{color:var(--accent);font-size:1.25rem}
+
+/* galeria */
+.gal{padding-block:2.5rem 5rem;text-align:center}
+@media (min-width:1024px){.gal{padding-bottom:7rem}}
+.gal .h2{margin:1rem auto 3rem;width:fit-content}
+.ggrid{display:grid;grid-template-columns:1fr;gap:1.5rem;text-align:left}
+@media (min-width:768px){.ggrid{grid-template-columns:repeat(2,1fr)}}
+.gcard{position:relative;display:block;width:100%;min-height:22rem;overflow:hidden;border-radius:var(--r-card);background:var(--ink);padding:1.5rem;color:#fff;text-align:left;box-shadow:0 0 0 1px rgba(255,255,255,.05);transition:transform .5s var(--spring)}
+@media (min-width:640px){.gcard{min-height:26rem;padding:2rem}}
+.gcard__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:.55;transition:transform .8s var(--spring),opacity .6s}
+.gcard__shade{position:absolute;inset:0;background:linear-gradient(to top,var(--ink) 10%,transparent 70%)}
+.gcard__mark{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;font-size:4.5rem;color:rgba(255,255,255,.9)}
+.gcard__meta{position:relative;display:flex;justify-content:space-between;align-items:flex-start;font-size:.75rem;text-transform:uppercase;letter-spacing:.025em;color:rgba(255,255,255,.5)}
+.gcard__badge{width:2.75rem;height:2.75rem;display:grid;place-items:center;border-radius:9999px;background:rgba(255,255,255,.1);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.15);font-size:1rem;transition:transform .4s var(--snap)}
+.gcard__b{position:absolute;inset-inline:1.5rem;bottom:1.5rem}
+@media (min-width:640px){.gcard__b{inset-inline:2rem;bottom:2rem}}
+.gcard h3{font-size:1.5rem;font-weight:500;letter-spacing:-.01em}
+@media (min-width:640px){.gcard h3{font-size:1.875rem}}
+.gcard p{margin-top:.5rem;max-width:28rem;font-size:.875rem;color:rgba(255,255,255,.6)}
+.tags{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{display:inline-flex;border:1px solid rgba(255,255,255,.25);border-radius:9999px;padding:.5rem 1rem;font-size:.875rem}
+@media (hover:hover){
+  .gcard:hover{transform:translateY(-8px) scale(1.012)}
+  .gcard:hover .gcard__img{transform:scale(1.05);opacity:.7}
+  .gcard:hover .gcard__badge{transform:rotate(45deg) scale(1.08)}
+}
+
+/* documentos */
+.docs{padding-block:5rem}
+@media (min-width:1024px){.docs{padding-block:7rem}}
+.docs .h2{margin:1.25rem 0 3rem;max-width:18ch}
+@media (min-width:640px){.docs .h2{margin-bottom:3.5rem}}
+.drow-li+.drow-li{border-top:1px solid var(--line)}
+.drow{display:flex;align-items:center;gap:1rem;border-radius:var(--r-card-sm);padding:1.5rem;background:rgba(238,241,240,0);transition:background-color .5s var(--spring),padding .5s var(--spring)}
+@media (min-width:640px){.drow{gap:1.5rem;padding-block:2rem}}
+.drow__i{width:1.75rem;flex:none;font-size:.875rem;font-weight:500;color:rgba(17,24,22,.4)}
+@media (min-width:640px){.drow__i{width:2.5rem}}
+.drow h3{flex:1;font-size:1.5rem;font-weight:500;letter-spacing:-.01em}
+@media (min-width:640px){.drow h3{font-size:1.875rem}}
+@media (min-width:768px){.drow h3{font-size:2.25rem}}
+.drow p{display:none;max-width:20rem;font-size:.875rem;color:rgba(17,24,22,.55)}
+@media (min-width:1024px){.drow p{display:block}}
+.drow__b{width:2.5rem;height:2.5rem;flex:none;display:grid;place-items:center;border-radius:9999px;background:var(--ink);color:#fff;transition:transform .35s var(--snap)}
+@media (min-width:640px){.drow__b{width:3rem;height:3rem}}
+.drow.hl{background:var(--surface)}
+@media (hover:hover){.drow:hover{background:var(--surface);padding-left:2rem;padding-right:1.25rem}.drow:hover .drow__b{transform:translateX(5px)}}
+
+/* classificados / downloads */
+.cd{display:grid;grid-template-columns:1fr;gap:1.5rem;padding-bottom:5rem}
+@media (min-width:1024px){.cd{grid-template-columns:1fr 1fr;padding-bottom:7rem}}
+.cd__card{border-radius:var(--r-card);padding:2.5rem 1.5rem;min-height:22rem;display:flex;flex-direction:column;justify-content:space-between;gap:2rem;scroll-margin-top:2rem}
+@media (min-width:640px){.cd__card{padding:3rem 2.5rem}}
+.cd__dark{background:var(--ink);color:#fff}
+.cd__light{background:var(--surface);justify-content:flex-start}
+.cd__card .h2m{margin-top:1rem}
+.cd__dark p{margin-top:1rem;font-size:.875rem;color:rgba(255,255,255,.55);max-width:30rem}
+.dl{margin-top:.5rem}
+.dl li a,.dl li div{display:flex;align-items:center;gap:1rem;padding-block:1rem;border-top:1px solid var(--surface-2)}
+.dl .ic{font-size:1.25rem;color:var(--accent)}
+.dl__n{flex:1;font-size:.9375rem;font-weight:500;transition:transform .35s var(--snap)}
+.dl__t{font-size:.75rem;text-transform:uppercase;color:rgba(17,24,22,.45)}
+@media (hover:hover){.dl a:hover .dl__n{transform:translateX(4px)}}
+
+/* contato */
+.cont{padding-bottom:5rem}
+@media (min-width:1024px){.cont{padding-bottom:7rem}}
+.cpanel{border-radius:var(--r-card);background:var(--ink);color:#fff;padding:3rem 1.5rem;display:grid;grid-template-columns:1fr;gap:3rem}
+@media (min-width:640px){.cpanel{padding:4rem 2rem}}
+@media (min-width:768px){.cpanel{padding-inline:4rem}}
+@media (min-width:1024px){.cpanel{grid-template-columns:1fr 1fr}}
+.cpanel .h2m{margin-top:1rem;max-width:18ch}
+.clist{margin-top:2.5rem;display:grid;gap:1.5rem}
+.clist li{display:flex;gap:1rem}
+.clist .ic{font-size:1.25rem;color:var(--accent-from);margin-top:.15rem}
+.clist__c{font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.45);margin-bottom:.25rem}
+.clist__v{font-size:1.125rem;font-weight:500;line-height:1.45;display:flex;flex-direction:column;align-items:flex-start;word-break:break-word}
+.clist__v .alink>span{opacity:1}
+.cpanel .pill{margin-top:2.5rem}
+.map{display:flex;flex-direction:column;gap:1rem}
+.map__f{flex:1;min-height:20rem;border-radius:var(--r-card-sm);overflow:hidden;background:#1a2421}
+.map__f iframe{width:100%;height:100%;min-height:20rem;border:0;filter:grayscale(.6) contrast(1.05);display:block}
+.map .alink{font-size:.875rem;color:#fff}
+
+/* footer */
+.footer{position:relative;overflow:hidden;border-radius:2rem 2rem 0 0;background:var(--ink);color:#fff}
+.footer__in{position:relative;z-index:10;padding-top:5rem;padding-bottom:2.5rem}
+@media (min-width:1024px){.footer__in{padding-top:6rem}}
+.fcta{display:flex;flex-direction:column;gap:2rem;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:4rem}
+@media (min-width:1024px){.fcta{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+.fcta h2{max-width:18ch;font-size:2.25rem;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+@media (min-width:640px){.fcta h2{font-size:3rem}}
+@media (min-width:768px){.fcta h2{font-size:3.75rem}}
+.fcols{display:grid;grid-template-columns:1fr;gap:3rem;padding-block:4rem}
+@media (min-width:768px){.fcols{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.fcols{grid-template-columns:1.3fr 1fr 1fr 1.2fr}}
+.flogo{background:#fff;border-radius:var(--r-card-sm);padding:1rem;width:9rem}
+.fbrand p{margin-top:1.25rem;max-width:20rem;font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.55}
+.fcol h4{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.025em;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
+.fcol ul{display:flex;flex-direction:column;gap:.75rem;font-size:.875rem}
+.fcol button{text-align:left}
+.legal{display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid rgba(255,255,255,.1);padding-top:2rem;font-size:.75rem;color:rgba(255,255,255,.45);text-align:center}
+@media (min-width:640px){.legal{flex-direction:row;text-align:left}}
+.legal nav{display:flex;gap:1.5rem}
+.legal .alink>span{opacity:.7}
+@media (hover:hover){.legal .alink:hover>span{transform:translateX(3px);opacity:1}}
+.footer__wm{position:absolute;inset-inline:0;bottom:-1rem;z-index:0;color:rgba(255,255,255,.05)}
+
+/* overlays */
+.ov{position:fixed;inset:0;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s}
+.ov.open{opacity:1;visibility:visible;transition:opacity .4s ease}
+.menu{z-index:115;display:flex;flex-direction:column;background:var(--ink);color:#fff}
+.menu__top{display:flex;align-items:center;justify-content:space-between;padding-block:1.25rem;width:100%}
+@media (min-width:640px){.menu__top{padding-block:1.5rem}}
+.menu__brand{display:flex;align-items:center;gap:.5rem;font-size:1.125rem;font-weight:600}
+.menu__brand .ic{font-size:1.5rem;color:var(--accent-from)}
+.closebtn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.15);border-radius:var(--r-ctl);padding:.5rem 1rem;font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.7);transition:border-color .3s,color .3s}
+.closebtn:hover{border-color:rgba(255,255,255,.4);color:#fff}
+.menu__nav{flex:1;display:flex;flex-direction:column;justify-content:center;width:100%;overflow:auto}
+.menu__nav ul{display:flex;flex-direction:column;gap:.25rem}
+.mitem{display:flex;align-items:baseline;gap:1rem;width:100%;padding-block:.4rem;text-align:left;font-size:2.25rem;font-weight:600;letter-spacing:-.02em;transform:translateY(1rem);opacity:0;transition:all .5s ease-out;transition-delay:var(--d)}
+@media (min-width:640px){.mitem{font-size:3.75rem}}
+.menu.open .mitem{transform:none;opacity:1}
+.mitem small{font-size:1rem;font-weight:400;color:rgba(255,255,255,.3);transition:color .3s}
+.mitem span{color:rgba(255,255,255,.7);transition:color .3s}
+.mitem:hover small,.mitem:focus-visible small{color:var(--accent-from)}
+.mitem:hover span,.mitem:focus-visible span{color:#fff}
+.menu__bot{display:flex;flex-direction:column;gap:.75rem;border-top:1px solid rgba(255,255,255,.1);padding-block:1.5rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.025em;color:rgba(255,255,255,.45);width:100%}
+@media (min-width:640px){.menu__bot{flex-direction:row;justify-content:space-between}}
+.menu__bot button{text-align:left;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.025em}
+.menu__bot button:hover{color:#fff;text-decoration:underline}
+
+.modal{z-index:110;display:flex;align-items:flex-end;justify-content:center;padding:1rem;background:rgba(12,20,18,.35);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+@media (min-width:640px){.modal{align-items:center}}
+.mpanel{position:relative;width:100%;max-width:34rem;max-height:calc(100dvh - 2rem);overflow:auto;overscroll-behavior:contain;border-radius:var(--r-card);background:#fff;padding:1.5rem;box-shadow:0 25px 50px -12px rgba(0,0,0,.25),0 0 0 1px var(--line);transform:translateY(28px);opacity:0;transition:transform .55s var(--spring),opacity .45s var(--spring)}
+@media (min-width:640px){.mpanel{padding:2rem}}
+.modal.open .mpanel{transform:none;opacity:1}
+.modal.closing .mpanel{transform:translateY(18px);opacity:0}
+.mclose{position:absolute;right:1rem;top:1rem;width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:9999px;background:var(--surface);color:rgba(17,24,22,.6);transition:background-color .2s,color .2s}
+.mclose:hover{background:var(--surface-2);color:var(--foreground)}
+.mhead{margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.375rem}
+.mhead .k{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;font-weight:500;color:rgba(17,24,22,.6)}
+.mhead .k::before{content:"";width:.375rem;height:.375rem;border-radius:9999px;background:var(--accent)}
+.mhead h2,.msuccess h2{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;padding-right:2.5rem}
+@media (min-width:640px){.mhead h2{font-size:1.875rem}}
+.form{display:flex;flex-direction:column;gap:1rem}
+.f2{display:grid;grid-template-columns:1fr;gap:1rem}
+@media (min-width:640px){.f2{grid-template-columns:1fr 1fr}}
+.fld{display:flex;flex-direction:column;gap:.375rem}
+.fld>span{font-size:.75rem;font-weight:500;text-transform:uppercase;letter-spacing:.025em;color:rgba(17,24,22,.5)}
+.ctl{width:100%;border:1px solid var(--line);background:rgba(238,241,240,.5);border-radius:var(--r-ctl);padding:.75rem 1rem;font-size:.875rem;outline:none;transition:border-color .2s,background-color .2s;appearance:none;-webkit-appearance:none}
+select.ctl{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111816' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:1rem;padding-right:2.5rem}
+.ctl:focus{border-color:rgba(17,24,22,.3);background-color:#fff}
+textarea.ctl{resize:none}
+.ctl.bad{border-color:var(--alert)}
+.err{font-size:.75rem;color:var(--alert);min-height:0}
+.err:empty{display:none}
+.chk{display:flex;gap:.625rem;align-items:flex-start;font-size:.8125rem;line-height:1.45;color:rgba(17,24,22,.7);cursor:pointer}
+.chk input{margin-top:.2rem;width:1rem;height:1rem;accent-color:var(--accent);flex:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.mfoot{margin-top:.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.mfoot p{font-size:.75rem;color:rgba(17,24,22,.45);max-width:16rem}
+.mfoot .pill[disabled]{opacity:.7;cursor:progress}
+.serr{font-size:.8125rem;color:var(--alert)}
+.serr:empty{display:none}
+.msuccess{display:none;flex-direction:column;align-items:center;text-align:center;gap:1rem;padding-block:2rem}
+.modal.done .msuccess{display:flex}
+.modal.done .mform{display:none}
+.msuccess__b{width:3.5rem;height:3.5rem;display:grid;place-items:center;border-radius:9999px;background:var(--ink);color:var(--accent-from);font-size:1.5rem}
+.msuccess p{max-width:34ch;font-size:.875rem;color:rgba(17,24,22,.6)}
+
+.lb{z-index:118;background:rgba(12,20,18,.94);display:flex;flex-direction:column;color:#fff}
+.lb__top{display:flex;align-items:center;justify-content:space-between;padding-block:1.25rem;width:100%;gap:1rem}
+.lb__t{font-size:1.125rem;font-weight:600}
+.lb__body{flex:1;display:flex;align-items:center;justify-content:center;gap:1rem;padding:0 1.25rem 2rem;min-height:0}
+.lb__img{max-width:100%;max-height:100%;object-fit:contain;border-radius:var(--r-card-sm)}
+.lb__nav{width:3rem;height:3rem;flex:none;display:grid;place-items:center;border-radius:9999px;background:rgba(255,255,255,.1);font-size:1.25rem}
+.lb__nav.prev .ic{transform:rotate(180deg)}
+.lb__empty{color:rgba(255,255,255,.6);font-size:1rem}
+.lb__cap{text-align:center;padding-bottom:1.5rem;font-size:.875rem;color:rgba(255,255,255,.6)}
+
+.toast{position:fixed;left:50%;bottom:1.5rem;z-index:125;transform:translate(-50%,1rem);opacity:0;pointer-events:none;background:var(--ink);color:#fff;border-radius:var(--r-ctl);padding:.75rem 1.25rem;font-size:.875rem;box-shadow:0 10px 30px -10px rgba(0,0,0,.4);transition:opacity .3s,transform .3s var(--spring);max-width:calc(100vw - 2rem);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-logo" viewBox="0 0 48 48" fill="none" stroke="currentColor">
+    <path d="M14 6v22M19 2v26M24 6v22M29 2v26M34 6v22" stroke-width="2.4" opacity=".45"/>
+    <ellipse cx="17" cy="32" rx="8" ry="7" stroke-width="3.2"/>
+    <ellipse cx="25" cy="27" rx="8" ry="6.5" stroke-width="3.2"/>
+    <ellipse cx="30" cy="35" rx="10" ry="7.5" stroke-width="3.2"/>
+  </symbol>
+  <symbol id="i-logo-c" viewBox="0 0 48 48" fill="none">
+    <path d="M14 6v22M19 2v26M24 6v22M29 2v26M34 6v22" stroke="#b3bcb9" stroke-width="2.4"/>
+    <ellipse cx="17" cy="32" rx="8" ry="7" stroke="#b8241c" stroke-width="3.2"/>
+    <ellipse cx="25" cy="27" rx="8" ry="6.5" stroke="#e9eeec" stroke-width="3.2"/>
+    <ellipse cx="30" cy="35" rx="10" ry="7.5" stroke="#7cc8b3" stroke-width="3.2"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-ur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+  <symbol id="i-dot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<!-- Loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__c">
+    <div class="loader__brand"><svg class="ic"><use href="#i-logo-c"/></svg>Multiempresarial</div>
+    <div class="loader__sub">Condomínio do Edifício Novo Centro Multiempresarial</div>
+    <p class="loader__tag">No centro de Brasília, perto de tudo.</p>
+  </div>
+  <div class="loader__p">
+    <div class="loader__track"><div class="loader__fill" id="loaderFill"></div></div>
+    <div class="loader__row"><span>Carregando</span><span class="loader__n" id="loaderN">000</span></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header reveal gate" style="--y:-14px;--d:150ms">
+  <div class="shell header__in">
+    <button class="brand" data-go="inicio" aria-label="Multiempresarial — início"><svg class="ic"><use href="#i-logo"/></svg>Multiempresarial</button>
+    <nav class="pnav" aria-label="Principal">
+      <ul>
+        <li><button data-go="inicio" aria-current="page">Início</button></li>
+        <li><button data-go="avisos">Avisos</button></li>
+        <li class="has-dd" id="ddWrap">
+          <button id="ddBtn" aria-expanded="false" aria-controls="ddPanel">Condomínio <svg class="ic chev"><use href="#i-chev"/></svg></button>
+          <div class="dd" id="ddPanel"><ul id="ddList"></ul></div>
+        </li>
+        <li><button data-go="galeria">Galeria</button></li>
+        <li><button data-go="classificados">Classificados</button></li>
+        <li><button data-go="downloads">Downloads</button></li>
+        <li><button data-contact>Contato</button></li>
+      </ul>
+    </nav>
+    <div class="hright">
+      <div class="chip clock" aria-label="Horário de Brasília">
+        <span class="clock__l">Brasília</span>
+        <span class="clock__t" data-clock-time>--:--</span>
+        <span class="clock__s">•</span>
+        <span class="clock__d" data-clock-date></span>
+      </div>
+      <a href="#login" class="chip chipbtn" data-soon aria-label="Área do condômino"><span><svg class="ic"><use href="#i-user"/></svg><span class="lbl-lg">Área do condômino</span></span></a>
+      <button class="chip chipbtn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span><svg class="ic"><use href="#i-menu"/></svg><span class="lbl-sm">Menu</span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" id="liquid">
+      <img src="assets/hero/fachada.jpg" alt="Fachada do Edifício Novo Centro Multiempresarial" width="800" height="515" fetchpriority="high" />
+    </div>
+    <div class="hero__vig"></div>
+    <div class="hero__wm wm reveal gate" style="--y:20px;--d:300ms" aria-hidden="true">MULTIEMPRESARIAL</div>
+
+    <div class="shell hero__grid">
+      <div class="hero__l">
+        <span class="eyebrow reveal gate" style="--y:10px;--d:200ms">SRTVS · Quadra 701 · Bloco O</span>
+        <h1 class="lines gate" style="--d:250ms;--stag:120ms">
+          <span class="ln" style="--i:0"><span>Seu negócio</span></span>
+          <span class="ln" style="--i:1"><span>no coração</span></span>
+          <span class="ln" style="--i:2"><span class="acc">de Brasília.</span></span>
+        </h1>
+        <div class="hero__info reveal gate" style="--y:10px;--d:650ms"><svg class="ic"><use href="#i-pin"/></svg>Escritórios comerciais em localização privilegiada</div>
+        <div class="ctas reveal gate" style="--y:10px;--d:750ms">
+          <button class="pill pill--dark has-arrow" data-contact>Fale com a administração<span class="pill__badge"><svg class="ic arr-r"><use href="#i-arrow"/></svg></span></button>
+          <button class="pill pill--outline pill--glass" data-go="avisos">Ver avisos</button>
+        </div>
+      </div>
+      <div class="hero__r">
+        <div class="qcard reveal gate" style="--y:16px;--s:.96;--d:400ms">
+          <div class="qcard__row">
+            <div class="qcard__tile" aria-hidden="true"><svg class="ic"><use href="#i-logo-c"/></svg></div>
+            <div class="qcard__p">
+              <button class="qcard__slot" id="qSlot" aria-live="polite"></button>
+              <div class="qcard__bot">
+                <div class="dots" id="qDots" aria-hidden="true"><i></i><i></i><i></i></div>
+                <div class="qnav">
+                  <button class="prev" id="qPrev" aria-label="Anterior"><svg class="ic"><use href="#i-arrow"/></svg></button>
+                  <button id="qNext" aria-label="Próximo"><svg class="ic"><use href="#i-arrow"/></svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="estr reveal gate" style="--y:14px;--d:550ms">
+          <p class="estr__l">Estrutura do edifício</p>
+          <ul>
+            <li><span><svg class="ic"><use href="#i-dot"/></svg>Escritórios comerciais</span></li>
+            <li><span><svg class="ic"><use href="#i-dot"/></svg>Centro de Convenções</span></li>
+            <li><span><svg class="ic"><use href="#i-dot"/></svg>Praça de Alimentação</span></li>
+            <li><span><svg class="ic"><use href="#i-dot"/></svg>Estacionamento rotativo</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="shell hero__bar reveal gate" style="--y:0px;--d:900ms">
+      <span>Brasília · DF</span><span class="mid">CEP 70340-000</span><span>Role para explorar ↓</span>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="sec" id="sobre">
+    <div class="shell sobre">
+      <div class="photo reveal" style="--y:24px;--s:.98">
+        <img src="assets/hero/fachada.jpg" alt="Edifício Novo Centro Multiempresarial visto da via" width="800" height="515" loading="lazy" />
+        <span class="photo__chip"><svg class="ic"><use href="#i-pin"/></svg>SRTVS Quadra 701, Bloco O</span>
+      </div>
+      <div class="stmt">
+        <span class="eyebrow reveal">Sobre o Condomínio</span>
+        <h2 class="words">Situado em uma localização privilegiada, no centro de Brasília, <span class="mut">com variedade de escritórios comerciais para atendê-lo em tudo que precisar.</span></h2>
+        <div class="stmt__foot reveal" style="--y:12px;--d:200ms">
+          <div>
+            <p class="stmt__lbl">Fale conosco</p>
+            <div class="socials">
+              <a class="soc soc--acc" href="tel:+556133220522" aria-label="Ligar para (61) 3322-0522"><svg class="ic"><use href="#i-phone"/></svg></a>
+              <a class="soc" href="mailto:condominio@multiempresarial.com.br" aria-label="Enviar e-mail para condominio@multiempresarial.com.br"><svg class="ic"><use href="#i-mail"/></svg></a>
+              <a class="soc" href="https://maps.google.com/?q=SRTVS+Quadra+701+Bloco+O+Bras%C3%ADlia+DF" target="_blank" rel="noopener" aria-label="Ver no mapa"><svg class="ic"><use href="#i-pin"/></svg></a>
+            </div>
+          </div>
+          <button class="pill pill--outline has-arrow" data-contact>Entrar em contato<span class="pill__badge"><svg class="ic arr-r"><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Band -->
+  <section class="sec" aria-label="Trabalhe no centro de tudo">
+    <ul class="shell band">
+      <li class="reveal" style="--y:28px;--d:0ms"><div class="tile tile--light">Trabalhe</div></li>
+      <li class="reveal" style="--y:28px;--d:120ms"><div class="tile tile--accent">no centro</div></li>
+      <li class="reveal" style="--y:28px;--d:240ms"><div class="tile tile--dark"><svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></div></li>
+      <li class="reveal" style="--y:28px;--d:360ms"><div class="tile tile--ghost">de tudo</div></li>
+    </ul>
+  </section>
+
+  <!-- Avisos -->
+  <section class="sec" id="avisos">
+    <div class="shell avisos">
+      <div class="avisos__head">
+        <div>
+          <span class="eyebrow reveal">Avisos</span>
+          <h2 class="h2 lines" style="--d:120ms;--stag:100ms"><span class="ln" style="--i:0"><span>Comunicados da</span></span><span class="ln" style="--i:1"><span>administração</span></span></h2>
+        </div>
+        <p class="reveal" style="--d:200ms">Fique por dentro das informações importantes do condomínio.</p>
+      </div>
+      <ul class="agrid" id="avisosList"></ul>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="sec" id="galeria">
+    <div class="shell gal">
+      <span class="eyebrow eyebrow--boxed reveal">Galeria de Fotos</span>
+      <h2 class="h2 lines" style="--d:120ms"><span class="ln"><span>Conheça o edifício</span></span></h2>
+      <ul class="ggrid" id="galList"></ul>
+    </div>
+  </section>
+
+  <!-- Documentos -->
+  <section class="sec" id="documentos">
+    <div class="shell docs">
+      <span class="eyebrow reveal">Condomínio</span>
+      <h2 class="h2 lines" style="--d:120ms"><span class="ln"><span>Tudo sobre o condomínio</span></span></h2>
+      <ul id="docList"></ul>
+    </div>
+  </section>
+
+  <!-- Classificados / Downloads -->
+  <section class="sec">
+    <div class="shell cd">
+      <div class="cd__card cd__dark reveal" id="classificados" style="--y:40px;--s:.99">
+        <div>
+          <span class="eyebrow eyebrow--light">Classificados</span>
+          <h2 class="h2m">Salas para venda e locação no edifício.</h2>
+          <p>Consulte os anúncios de condôminos e anuncie a sua sala.</p>
+        </div>
+        <div><button class="pill pill--light has-arrow" data-contact="Classificados">Falar sobre classificados<span class="pill__badge"><svg class="ic arr-ur"><use href="#i-arrow-ur"/></svg></span></button></div>
+      </div>
+      <div class="cd__card cd__light reveal" id="downloads" style="--y:40px;--s:.99;--d:120ms">
+        <div>
+          <span class="eyebrow">Downloads</span>
+          <h2 class="h2m">Documentos e formulários.</h2>
+        </div>
+        <ul class="dl" id="dlList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="sec" id="contato">
+    <div class="shell cont">
+      <div class="cpanel reveal" style="--y:40px;--s:.99">
+        <div>
+          <span class="eyebrow eyebrow--light">Contato</span>
+          <h2 class="h2m lines" style="--d:120ms;--stag:100ms"><span class="ln" style="--i:0"><span>Estamos no centro</span></span><span class="ln" style="--i:1"><span>de Brasília.</span></span></h2>
+          <ul class="clist">
+            <li class="reveal" style="--y:20px;--d:0ms"><svg class="ic"><use href="#i-pin"/></svg><div><p class="clist__c">Endereço</p><p class="clist__v"><span>SRTVS Quadra 701, Bloco O</span><span>Brasília-DF · CEP 70340-000</span></p></div></li>
+            <li class="reveal" style="--y:20px;--d:90ms"><svg class="ic"><use href="#i-phone"/></svg><div><p class="clist__c">Telefones</p><p class="clist__v"><a class="alink" href="tel:+556133220522"><span>(61) 3322-0522</span></a><a class="alink" href="tel:+556132258540"><span>(61) 3225-8540</span></a></p></div></li>
+            <li class="reveal" style="--y:20px;--d:180ms"><svg class="ic"><use href="#i-mail"/></svg><div><p class="clist__c">E-mails</p><p class="clist__v"><a class="alink" href="mailto:condominio@multiempresarial.com.br"><span>condominio@multiempresarial.com.br</span></a><a class="alink" href="mailto:administracao@multiempresarial.com.br"><span>administracao@multiempresarial.com.br</span></a></p></div></li>
+          </ul>
+          <button class="pill pill--light has-arrow" data-contact>Enviar mensagem<span class="pill__badge"><svg class="ic arr-r"><use href="#i-arrow"/></svg></span></button>
+        </div>
+        <div class="map">
+          <div class="map__f"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — SRTVS Quadra 701, Bloco O" src="https://maps.google.com/maps?q=SRTVS%20Quadra%20701%20Bloco%20O%20Bras%C3%ADlia&output=embed"></iframe></div>
+          <a class="alink" href="https://maps.google.com/?q=SRTVS+Quadra+701+Bloco+O+Bras%C3%ADlia+DF" target="_blank" rel="noopener"><span>Abrir no Google Maps ↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="shell footer__in">
+    <div class="fcta">
+      <h2 class="lines" style="--stag:100ms"><span class="ln" style="--i:0"><span>Precisa falar com</span></span><span class="ln" style="--i:1"><span>a administração?</span></span></h2>
+      <div><button class="pill pill--light has-arrow" data-contact>Entrar em contato<span class="pill__badge"><svg class="ic arr-ur"><use href="#i-arrow-ur"/></svg></span></button></div>
+    </div>
+    <div class="fcols">
+      <div class="fbrand">
+        <img class="flogo" src="assets/logo-multiempresarial.png" alt="Logo Multiempresarial" width="565" height="428" loading="lazy" />
+        <p>Condomínio do Edifício Novo Centro Multiempresarial. SRTVS Quadra 701, Bloco O — Brasília-DF.</p>
+      </div>
+      <div class="fcol"><h4>Condomínio</h4><ul>
+        <li><button class="alink" data-go="documentos"><span>Atas e Relatórios</span></button></li>
+        <li><button class="alink" data-go="documentos"><span>Financeiro</span></button></li>
+        <li><button class="alink" data-go="documentos"><span>Administração</span></button></li>
+        <li><button class="alink" data-go="documentos"><span>Convenção e Regimento</span></button></li>
+      </ul></div>
+      <div class="fcol"><h4>Acesso rápido</h4><ul>
+        <li><button class="alink" data-go="avisos"><span>Avisos</span></button></li>
+        <li><button class="alink" data-go="galeria"><span>Galeria de Fotos</span></button></li>
+        <li><button class="alink" data-go="classificados"><span>Classificados</span></button></li>
+        <li><button class="alink" data-go="downloads"><span>Downloads</span></button></li>
+        <li><a class="alink" href="#login" data-soon><span>Área do condômino</span></a></li>
+      </ul></div>
+      <div class="fcol"><h4>Contato</h4><ul>
+        <li><a class="alink" href="tel:+556133220522"><span>(61) 3322-0522</span></a></li>
+        <li><a class="alink" href="tel:+556132258540"><span>(61) 3225-8540</span></a></li>
+        <li><a class="alink" href="mailto:condominio@multiempresarial.com.br"><span>condominio@multiempresarial.com.br</span></a></li>
+        <li><a class="alink" href="mailto:administracao@multiempresarial.com.br"><span>administracao@multiempresarial.com.br</span></a></li>
+      </ul></div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Condomínio do Edifício Novo Centro Multiempresarial. Todos os direitos reservados.</span>
+      <nav aria-label="Legal"><button class="alink" data-go="documentos"><span>Política de Privacidade</span></button><button class="alink" data-go="documentos"><span>LGPD</span></button></nav>
+    </div>
+  </div>
+  <div class="footer__wm wm" aria-hidden="true">MULTIEMPRESARIAL</div>
+</footer>
+
+<!-- Nav menu -->
+<div class="ov menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="shell menu__top">
+    <span class="menu__brand"><svg class="ic"><use href="#i-logo"/></svg>Multiempresarial</span>
+    <button class="closebtn" id="menuClose"><svg class="ic"><use href="#i-x"/></svg>Fechar</button>
+  </div>
+  <nav class="shell menu__nav" aria-label="Menu principal"><ul id="menuList"></ul></nav>
+  <div class="shell menu__bot">
+    <span>Brasília — <span data-clock-time>--:--</span></span>
+    <a href="tel:+556133220522">(61) 3322-0522</a>
+    <button data-contact data-close-menu>Fale com a administração →</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="ov modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="mpanel" id="mpanel">
+    <button class="mclose" id="mClose" aria-label="Fechar"><svg class="ic"><use href="#i-x"/></svg></button>
+    <div class="mform">
+      <div class="mhead"><span class="k">Entrar em contato</span><h2 id="mTitle">Como podemos ajudar?</h2></div>
+      <form class="form" id="form" novalidate>
+        <label class="fld"><span>Nome*</span><input class="ctl" name="nome" type="text" required maxlength="120" autocomplete="name" placeholder="Seu nome"><em class="err"></em></label>
+        <label class="fld"><span>Endereço</span><input class="ctl" name="endereco" type="text" maxlength="200" placeholder="Sala / empresa ou endereço"><em class="err"></em></label>
+        <div class="f2">
+          <label class="fld"><span>E-mail*</span><input class="ctl" name="email" type="email" required maxlength="200" autocomplete="email" placeholder="voce@empresa.com.br"><em class="err"></em></label>
+          <label class="fld"><span>Telefone*</span><input class="ctl" name="telefone" type="tel" required autocomplete="tel" inputmode="tel" placeholder="(61) 90000-0000" pattern="\(\d{2}\) \d{4,5}-\d{4}"><em class="err"></em></label>
+        </div>
+        <label class="fld"><span>Assunto</span>
+          <select class="ctl" name="assunto">
+            <option>Administração</option><option>Financeiro</option><option>Manutenção</option><option>Classificados</option><option>LGPD / Dados pessoais</option><option>Outros</option>
+          </select>
+        </label>
+        <label class="fld"><span>Mensagem*</span><textarea class="ctl" name="mensagem" rows="4" required maxlength="4000" placeholder="Escreva sua mensagem."></textarea><em class="err"></em></label>
+        <input class="hp" name="empresa_site" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="chk"><input type="checkbox" name="lgpd" required><span>Concordo com o tratamento dos meus dados para retorno do contato, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).*</span></label>
+        <em class="err" id="lgpdErr"></em>
+        <div class="mfoot">
+          <p>Seus dados estão seguros e serão usados apenas para responder ao seu contato.</p>
+          <button class="pill pill--dark has-arrow" type="submit" id="send"><span id="sendLbl">Enviar mensagem</span><span class="pill__badge"><svg class="ic arr-ur"><use href="#i-arrow-ur"/></svg></span></button>
+        </div>
+        <p class="serr" id="serr" role="alert"></p>
+      </form>
+    </div>
+    <div class="msuccess">
+      <div class="msuccess__b"><svg class="ic"><use href="#i-logo"/></svg></div>
+      <h2>Mensagem enviada</h2>
+      <p>Obrigado pelo contato. A administração retornará pelo e-mail ou telefone informado.</p>
+      <button class="pill pill--dark" id="mDone">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="ov lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <div class="shell lb__top">
+    <span class="lb__t" id="lbTitle"></span>
+    <button class="closebtn" id="lbClose"><svg class="ic"><use href="#i-x"/></svg>Fechar</button>
+  </div>
+  <div class="lb__body" id="lbBody"></div>
+  <p class="lb__cap" id="lbCap"></p>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="importmap">
+{ "imports": { "lenis": "https://unpkg.com/lenis@1.3.23/dist/lenis.mjs" } }
+</script>
+<script type="module">
+/* ---------- Supabase (REST) ---------- */
+const SUPABASE_URL = 'https://wekdopgrtqrizmznbirf.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_Q04s3B217vNsJtmtrGiHmA_oRwLU67Z'; // chave pública (publishable)
+const sb = (path, opts = {}) => fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+  ...opts, headers: { apikey: SUPABASE_KEY, 'Content-Type': 'application/json', ...(opts.headers || {}) }
+});
+
+/* ---------- Conteúdo de reserva (usado se o banco não responder) ---------- */
+let AVISOS = [];
+let GALERIA = [
+  { titulo:'Fachada', ano:null, descricao:'O Edifício Novo Centro Multiempresarial, no Setor de Rádio e TV Sul.', tags:['Edifício','SRTVS'], capa:'assets/hero/fachada.jpg', fotos:[{url:'assets/hero/fachada.jpg'}] },
+  { titulo:'Centro de Convenções', ano:null, descricao:'Espaço para eventos, reuniões e convenções.', tags:['Eventos','Convenções'], capa:null, fotos:[] },
+  { titulo:'Eventos', ano:null, descricao:'Registros dos eventos realizados no condomínio.', tags:['Eventos'], capa:null, fotos:[] },
+  { titulo:'Estacionamento Rotativo', ano:null, descricao:'Estacionamento rotativo para condôminos e visitantes.', tags:['Estacionamento'], capa:null, fotos:[] },
+  { titulo:'Praça de Alimentação', ano:null, descricao:'Opções de alimentação dentro do edifício.', tags:['Alimentação'], capa:null, fotos:[] },
+  { titulo:'Simulação de Evacuação', ano:2023, descricao:'Simulado de evacuação realizado com a brigada do edifício.', tags:['Segurança','Brigada'], capa:null, fotos:[] },
+];
+let DOCUMENTOS = [
+  { titulo:'Atas e Relatórios', descricao:'Atas de assembleias e relatórios da gestão.', href:null },
+  { titulo:'Financeiro', descricao:'Prestação de contas e informações financeiras.', href:null },
+  { titulo:'Administração', descricao:'Síndico, conselho e equipe administrativa.', href:null },
+  { titulo:'Informações', descricao:'Horários, normas de uso e orientações gerais.', href:null },
+  { titulo:'PGRS e PGRSS', descricao:'Planos de gerenciamento de resíduos sólidos e de saúde.', href:null },
+  { titulo:'Lei Geral de Proteção de Dados', descricao:'Como o condomínio trata seus dados pessoais (LGPD).', href:null },
+  { titulo:'Convenção e Regimento', descricao:'Convenção do condomínio e regimento interno.', href:null },
+];
+let DOWNLOADS = [
+  { titulo:'Convenção do Condomínio', href:null },
+  { titulo:'Regimento Interno', href:null },
+  { titulo:'Formulário de cadastro', href:null },
+  { titulo:'Formulário de mudança', href:null },
+];
+
+/* ---------- helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const html = document.documentElement;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const svg = (id, cls = '') => { const s = document.createElementNS('http://www.w3.org/2000/svg','svg'); s.setAttribute('class', `ic ${cls}`); s.setAttribute('aria-hidden','true'); const u = document.createElementNS('http://www.w3.org/2000/svg','use'); u.setAttribute('href', `#i-${id}`); s.append(u); return s; };
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const safeHref = h => (typeof h === 'string' && /^(https?:\/\/|\/|#|assets\/)/i.test(h.trim())) ? h.trim() : null;
+let ready = false;
+
+/* ---------- adaptive grid ---------- */
+function applyAdaptiveGrid(){
+  const FONT_BASE = 16, baseWidth = 1920, coef = 0.6666;
+  const widthReduction = ((baseWidth - innerWidth) / baseWidth) * 100;
+  const size = FONT_BASE - (FONT_BASE * (widthReduction * coef)) / 100;
+  if (size > FONT_BASE) html.style.fontSize = size + 'px'; else html.style.removeProperty('font-size');
+}
+applyAdaptiveGrid(); addEventListener('resize', applyAdaptiveGrid);
+
+/* ---------- Lenis + scroll lock ---------- */
+let lenis = null, locks = 0;
+history.scrollRestoration = 'manual'; scrollTo(0, 0);
+import('lenis').then(({ default: Lenis }) => {
+  lenis = new Lenis({ smoothWheel: true });
+  const raf = t => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
+  if (locks) lenis.stop();
+}).catch(() => {});
+function stopScroll(){ if (locks++ === 0){ lenis?.stop(); Object.assign(html.style, { position:'relative', overflow:'hidden', height:'100%' }); } }
+function startScroll(){ if (locks > 0 && --locks === 0){ lenis?.start(); html.style.removeProperty('position'); html.style.removeProperty('overflow'); html.style.removeProperty('height'); } }
+function goTo(id){
+  const t = document.getElementById(id); if (!t) return;
+  setTimeout(() => {
+    if (lenis) lenis.scrollTo(t, { duration: 1.2 });
+    else window.scrollTo({ top: t.getBoundingClientRect().top + pageYOffset, behavior: reduced ? 'auto' : 'smooth' });
+  }, 50);
+}
+
+/* ---------- reveals ---------- */
+function splitWords(h){
+  let i = 0;
+  const walk = (node, target) => {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3){
+        n.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) target.append(' ');
+          else { const w = el('span', 'w', part); w.style.setProperty('--i', i++); target.append(w); }
+        });
+      } else if (n.nodeType === 1){
+        const c = n.cloneNode(false); walk(n, c); target.append(c);
+      }
+    });
+  };
+  const frag = document.createDocumentFragment(); walk(h, frag); h.replaceChildren(frag);
+}
+$$('.words').forEach(splitWords);
+const io = new IntersectionObserver(entries => entries.forEach(e => {
+  if (!e.isIntersecting) return;
+  if (e.target.classList.contains('gate') && !ready) return;
+  e.target.classList.add('in'); io.unobserve(e.target);
+}), { threshold: .15, rootMargin: '0px 0px -5% 0px' });
+const observe = root => $$('.reveal, .lines, .words', root).forEach(n => { if (!n.classList.contains('in')) io.observe(n); });
+observe(document);
+
+/* ---------- loader ---------- */
+(function loader(){
+  const L = $('#loader'), fill = $('#loaderFill'), num = $('#loaderN');
+  stopScroll();
+  const FILL_MS = reduced ? 300 : 1300, t0 = performance.now();
+  const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+  const tick = now => {
+    const t = Math.min((now - t0) / FILL_MS, 1), p = Math.round(ease(t) * 100);
+    fill.style.width = p + '%'; num.textContent = String(p).padStart(3, '0');
+    if (t < 1) return requestAnimationFrame(tick);
+    L.classList.add('out');
+    const done = () => {
+      if (ready) return; ready = true; startScroll(); L.remove();
+      $$('.gate').forEach(g => g.classList.add('in'));
+      loadData();
+    };
+    L.addEventListener('transitionend', e => { if (e.target === L) done(); });
+    setTimeout(done, 1000);
+  };
+  requestAnimationFrame(tick);
+})();
+
+/* ---------- clock (Brasília) ---------- */
+const fTime = new Intl.DateTimeFormat('pt-BR', { timeZone:'America/Sao_Paulo', hour:'2-digit', minute:'2-digit', hour12:false });
+const fDate = new Intl.DateTimeFormat('pt-BR', { timeZone:'America/Sao_Paulo', day:'numeric', month:'long', year:'numeric' });
+function clock(){
+  const d = new Date();
+  $$('[data-clock-time]').forEach(n => n.textContent = fTime.format(d));
+  $$('[data-clock-date]').forEach(n => n.textContent = fDate.format(d));
+}
+clock(); setInterval(clock, 1000);
+$('#year').textContent = new Date().getFullYear();
+
+/* ---------- liquid reveal ---------- */
+(function liquid(){
+  const wrap = $('#liquid'), hero = $('#inicio'), base = wrap.querySelector('img');
+  if (reduced || !canHover){ hero.classList.add('no-liquid'); return; }
+  const canvas = document.createElement('canvas'); canvas.setAttribute('aria-hidden','true'); wrap.append(canvas);
+  const ctx = canvas.getContext('2d');
+  const cover = document.createElement('canvas'), cctx = cover.getContext('2d');
+  const brush = document.createElement('canvas'), bctx = brush.getContext('2d');
+  const BRUSH = 143, DECAY = .016, FADE_FRAMES = 120;
+  let dpr = 1, radius = 0, diam = 0, W = 0, H = 0, img = null, points = [], last = null, idle = FADE_FRAMES + 1, running = false;
+
+  function build(){
+    const r = wrap.getBoundingClientRect();
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    W = canvas.width = Math.round(r.width * dpr); H = canvas.height = Math.round(r.height * dpr);
+    canvas.style.width = r.width + 'px'; canvas.style.height = r.height + 'px';
+    radius = BRUSH * dpr; diam = Math.ceil(radius * 2); brush.width = brush.height = diam;
+    cover.width = W; cover.height = H;
+    if (!img) return;
+    // object-fit:cover + object-position:center 35% + transform:scale(1.08) around the center
+    const s0 = Math.max(W / img.naturalWidth, H / img.naturalHeight), k = 1.08;
+    const w0 = img.naturalWidth * s0, h0 = img.naturalHeight * s0;
+    const x0 = (W - w0) * .5, y0 = (H - h0) * .35;
+    cctx.clearRect(0, 0, W, H);
+    cctx.drawImage(img, W/2 + (x0 - W/2) * k, H/2 + (y0 - H/2) * k, w0 * k, h0 * k);
+  }
+  function stamp(x, y){
+    const c = diam / 2;
+    bctx.globalCompositeOperation = 'source-over'; bctx.clearRect(0, 0, diam, diam);
+    const g = bctx.createRadialGradient(c, c, 0, c, c, radius);
+    g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.55, 'rgba(255,255,255,.82)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+    bctx.fillStyle = g; bctx.fillRect(0, 0, diam, diam);
+    bctx.globalCompositeOperation = 'source-in';
+    bctx.drawImage(cover, x - c, y - c, diam, diam, 0, 0, diam, diam);
+    ctx.globalCompositeOperation = 'source-over'; ctx.drawImage(brush, x - c, y - c);
+  }
+  function tick(){
+    const drawing = points.length > 0;
+    if (drawing) idle = 0; else idle++;
+    if (idle > FADE_FRAMES){ running = false; return; }
+    const fade = drawing ? DECAY : Math.min(DECAY + idle * .004, .5);
+    ctx.globalCompositeOperation = 'destination-out'; ctx.fillStyle = `rgba(0,0,0,${fade})`; ctx.fillRect(0, 0, W, H);
+    if (drawing){ points.forEach(p => stamp(p.x, p.y)); points = []; }
+    if (idle === FADE_FRAMES){ ctx.globalCompositeOperation = 'source-over'; ctx.clearRect(0, 0, W, H); }
+    requestAnimationFrame(tick);
+  }
+  addEventListener('pointermove', e => {
+    if (!img || !ready) return;
+    const r = canvas.getBoundingClientRect();
+    const x = (e.clientX - r.left) * dpr, y = (e.clientY - r.top) * dpr;
+    if (x < -radius || y < -radius || x > W + radius || y > H + radius){ last = null; return; }
+    if (last){
+      const dx = x - last.x, dy = y - last.y, dist = Math.hypot(dx, dy);
+      const step = Math.max(radius * .3, 1), n = Math.min(Math.ceil(dist / step), 60);
+      for (let i = 1; i <= n; i++) points.push({ x: last.x + dx * i / n, y: last.y + dy * i / n });
+    } else points.push({ x, y });
+    last = { x, y };
+    if (!running){ running = true; idle = 0; requestAnimationFrame(tick); }
+  }, { passive: true });
+  const im = new Image(); im.decoding = 'async';
+  im.onload = () => { img = im; build(); }; im.src = base.currentSrc || base.src;
+  new ResizeObserver(build).observe(wrap);
+})();
+
+/* ---------- hero quick-access card ---------- */
+(function quick(){
+  const ITEMS = [
+    { caption:'Avisos', title:'Comunicados da administração.', target:'avisos' },
+    { caption:'Classificados', title:'Salas e anúncios do edifício.', target:'classificados' },
+    { caption:'Downloads', title:'Convenção, regimento e formulários.', target:'downloads' },
+  ];
+  const slot = $('#qSlot'), dots = $$('#qDots i'); let i = 0, cur = null, timer = null;
+  const make = it => { const s = el('span', 'qitem'); s.append(el('span','qitem__c', it.caption), el('span','qitem__t', it.title)); return s; };
+  function show(step){
+    const n = ITEMS.length, next = make(ITEMS[i = (i + step + n) % n]);
+    if (cur && step){
+      const old = cur; old.classList.add(step > 0 ? 'off-up' : 'off-down');
+      setTimeout(() => old.remove(), 450);
+      next.classList.add(step > 0 ? 'off-down' : 'off-up'); slot.append(next);
+      requestAnimationFrame(() => requestAnimationFrame(() => next.classList.remove('off-up','off-down')));
+    } else slot.append(next);
+    cur = next; slot.setAttribute('aria-label', `${ITEMS[i].caption}: ${ITEMS[i].title} Ir para a seção.`);
+    dots.forEach((d, k) => d.classList.toggle('on', k === i));
+  }
+  const auto = () => { clearInterval(timer); if (!reduced) timer = setInterval(() => show(1), 5000); };
+  show(0); auto();
+  $('#qNext').onclick = () => { show(1); auto(); };
+  $('#qPrev').onclick = () => { show(-1); auto(); };
+  slot.onclick = () => goTo(ITEMS[i].target);
+  const card = slot.closest('.qcard');
+  card.addEventListener('mouseenter', () => clearInterval(timer));
+  card.addEventListener('mouseleave', auto);
+  card.addEventListener('focusin', () => clearInterval(timer));
+  card.addEventListener('focusout', auto);
+})();
+
+/* ---------- renderers ---------- */
+const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const fmtData = s => { const [y, m, d] = String(s).split('-').map(Number); return (y && m && d) ? `${d} ${MES[m-1]} ${y}` : ''; };
+
+function renderAvisos(){
+  const ul = $('#avisosList'); ul.replaceChildren();
+  if (!AVISOS.length){
+    const li = el('li', 'reveal'); li.style.gridColumn = '1 / -1';
+    const d = el('div', 'empty'); d.append(svg('bell'), el('span', null, 'Nenhum aviso no momento.')); li.append(d); ul.append(li);
+  }
+  AVISOS.slice(0, 6).forEach((a, k) => {
+    const li = el('li', 'reveal'); li.style.cssText = `--y:32px;--d:${k*90}ms`;
+    const card = el('article', 'acard');
+    const top = el('div', 'acard__top'); const cat = el('span'); cat.append(svg('bell'), el('span', null, a.categoria || 'Aviso'));
+    const t = el('time', null, fmtData(a.data)); t.dateTime = a.data || ''; top.append(cat, t); card.append(top);
+    if (a.urgente) card.append(el('span', 'urg', 'Urgente'));
+    card.append(el('h3', null, a.titulo), el('p', null, a.texto));
+    const href = safeHref(a.link);
+    if (href){ const l = el('a', 'alink'); l.href = href; if (/^https?:/.test(href)){ l.target = '_blank'; l.rel = 'noopener'; } l.append(el('span', null, 'Ler aviso →')); card.append(l); }
+    li.append(card); ul.append(li);
+  });
+  observe(ul);
+}
+
+function renderGaleria(){
+  const ul = $('#galList'); ul.replaceChildren();
+  GALERIA.forEach((g, k) => {
+    const li = el('li', 'reveal'); li.style.cssText = `--y:48px;--d:${(k % 2)*90}ms`;
+    const b = el('button', 'gcard'); b.type = 'button'; b.setAttribute('aria-label', `Abrir álbum ${g.titulo}`);
+    const capa = safeHref(g.capa);
+    if (capa){ const im = el('img', 'gcard__img'); im.src = capa; im.alt = ''; im.loading = 'lazy'; im.width = 800; im.height = 515; b.append(im, el('span', 'gcard__shade')); }
+    else { const m = el('span', 'gcard__mark'); m.append(svg('logo')); b.append(m); }
+    const meta = el('span', 'gcard__meta'); meta.append(el('span', null, `Galeria — ${g.ano || 'Multiempresarial'}`));
+    const badge = el('span', 'gcard__badge'); badge.append(svg('arrow-ur')); meta.append(badge); b.append(meta);
+    const bot = el('span', 'gcard__b'); bot.style.display = 'block';
+    const h = el('h3', null, g.titulo); const p = el('p', null, g.descricao || '');
+    const tags = el('span', 'tags'); (g.tags || []).forEach(t => tags.append(el('span', 'tag', t)));
+    bot.append(h, p, tags); b.append(bot);
+    b.onclick = () => openLightbox(g, b);
+    li.append(b); ul.append(li);
+  });
+  observe(ul);
+}
+
+function renderDocs(){
+  const ul = $('#docList'); ul.replaceChildren();
+  const dd = $('#ddList'); dd.replaceChildren();
+  DOCUMENTOS.forEach((d, k) => {
+    const li = el('li', 'reveal drow-li'); li.style.cssText = `--y:24px;--d:${k*80}ms`;
+    const href = safeHref(d.href);
+    const row = el(href ? 'a' : 'div', 'drow'); row.id = `doc-${k}`;
+    if (href){ row.href = href; if (/^https?:/.test(href)){ row.target = '_blank'; row.rel = 'noopener'; } }
+    const b = el('span', 'drow__b'); b.append(svg('arrow-ur'));
+    row.append(el('span', 'drow__i', String(k + 1).padStart(2, '0')), el('h3', null, d.titulo), el('p', null, d.descricao || ''), b);
+    li.append(row); ul.append(li);
+    const di = el('li'); const btn = el('button', null, d.titulo);
+    btn.onclick = () => { closeDD(); goTo('documentos'); setTimeout(() => { row.classList.add('hl'); setTimeout(() => row.classList.remove('hl'), 1800); }, 900); };
+    di.append(btn); dd.append(di);
+  });
+  observe(ul);
+}
+
+function renderDownloads(){
+  const ul = $('#dlList'); ul.replaceChildren();
+  DOWNLOADS.forEach(d => {
+    const href = safeHref(d.href);
+    const li = el('li'); const row = el(href ? 'a' : 'div');
+    if (href){ row.href = href; row.target = '_blank'; row.rel = 'noopener'; }
+    row.append(svg('file'), el('span', 'dl__n', d.titulo), el('span', 'dl__t', href ? 'PDF' : 'Em breve'));
+    li.append(row); ul.append(li);
+  });
+}
+
+renderAvisos(); renderGaleria(); renderDocs(); renderDownloads();
+
+async function loadData(){
+  const get = async q => { const r = await sb(q); if (!r.ok) throw new Error(r.status); return r.json(); };
+  const [av, docs, gal] = await Promise.allSettled([
+    get('avisos?select=data,categoria,titulo,texto,urgente,link&order=data.desc&limit=6'),
+    get('documentos?select=secao,titulo,descricao,href&order=ordem'),
+    get('galeria_albuns?select=titulo,descricao,ano,tags,capa,ordem,galeria_fotos(url,legenda,ordem)&order=ordem'),
+  ]);
+  if (av.status === 'fulfilled'){ AVISOS = av.value; renderAvisos(); }
+  if (docs.status === 'fulfilled'){
+    const c = docs.value.filter(d => d.secao === 'condominio'), dl = docs.value.filter(d => d.secao === 'downloads');
+    if (c.length){ DOCUMENTOS = c; renderDocs(); }
+    if (dl.length){ DOWNLOADS = dl; renderDownloads(); }
+  }
+  if (gal.status === 'fulfilled' && gal.value.length){
+    GALERIA = gal.value.map(g => ({ ...g, fotos: (g.galeria_fotos || []).sort((a, b) => a.ordem - b.ordem) }));
+    renderGaleria();
+  }
+}
+
+/* ---------- dropdown ---------- */
+const ddWrap = $('#ddWrap'), ddBtn = $('#ddBtn');
+function closeDD(){ ddWrap.classList.remove('open'); ddBtn.setAttribute('aria-expanded', 'false'); }
+ddBtn.onclick = e => { e.stopPropagation(); const o = ddWrap.classList.toggle('open'); ddBtn.setAttribute('aria-expanded', String(o)); if (o) ddWrap.querySelector('.dd button')?.focus(); };
+document.addEventListener('click', e => { if (!ddWrap.contains(e.target)) closeDD(); });
+ddWrap.addEventListener('keydown', e => { if (e.key === 'Escape'){ closeDD(); ddBtn.focus(); } });
+
+/* ---------- focus trap helper ---------- */
+function trap(container, e){
+  if (e.key !== 'Tab') return;
+  const f = $$('a[href],button:not([disabled]),input:not(.hp),select,textarea,iframe', container).filter(n => n.offsetParent !== null);
+  if (!f.length) return;
+  const first = f[0], lastF = f[f.length - 1];
+  if (e.shiftKey && document.activeElement === first){ e.preventDefault(); lastF.focus(); }
+  else if (!e.shiftKey && document.activeElement === lastF){ e.preventDefault(); first.focus(); }
+}
+
+/* ---------- nav menu ---------- */
+const menu = $('#menu'), menuBtn = $('#menuBtn');
+const MENU = [['Início','inicio'],['Avisos','avisos'],['Condomínio','documentos'],['Galeria','galeria'],['Classificados','classificados'],['Downloads','downloads'],['Contato','contato']];
+MENU.forEach(([label, id], k) => {
+  const li = el('li'); const b = el('button', 'mitem'); b.style.setProperty('--d', `${k*45 + 80}ms`);
+  b.append(el('small', null, String(k + 1).padStart(2, '0')), el('span', null, label));
+  b.onclick = () => { closeMenu(); goTo(id); };
+  li.append(b); $('#menuList').append(li);
+});
+let menuOpen = false;
+function openMenu(){ if (menuOpen) return; menuOpen = true; menu.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); stopScroll(); setTimeout(() => $('#menuClose').focus(), 50); }
+function closeMenu(){ if (!menuOpen) return; menuOpen = false; menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); startScroll(); }
+menuBtn.onclick = openMenu;
+$('#menuClose').onclick = () => { closeMenu(); menuBtn.focus(); };
+menu.addEventListener('keydown', e => { if (e.key === 'Escape'){ closeMenu(); menuBtn.focus(); } trap(menu, e); });
+
+/* ---------- contact modal ---------- */
+const modal = $('#modal'), form = $('#form');
+let modalOpen = false, lastFocus = null, resetT = null;
+function openModal(assunto){
+  if (modalOpen) return; modalOpen = true; clearTimeout(resetT);
+  lastFocus = document.activeElement;
+  if (assunto) form.assunto.value = assunto;
+  modal.classList.remove('closing'); modal.classList.add('open'); stopScroll();
+  setTimeout(() => (modal.classList.contains('done') ? $('#mDone') : form.nome).focus(), 80);
+}
+function closeModal(){
+  if (!modalOpen) return; modalOpen = false;
+  modal.classList.add('closing'); modal.classList.remove('open'); startScroll();
+  setTimeout(() => modal.classList.remove('closing'), 450);
+  resetT = setTimeout(() => { form.reset(); modal.classList.remove('done'); $$('.err', form).forEach(e => e.textContent = ''); $$('.ctl', form).forEach(c => c.classList.remove('bad')); $('#serr').textContent = ''; }, 300);
+  lastFocus?.focus?.();
+}
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+modal.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); trap(modal, e); });
+$('#mClose').onclick = closeModal; $('#mDone').onclick = closeModal;
+
+const tel = form.telefone;
+tel.addEventListener('input', () => {
+  const d = tel.value.replace(/\D/g, '').slice(0, 11);
+  let v = d;
+  if (d.length > 2) v = `(${d.slice(0,2)}) ${d.slice(2)}`;
+  if (d.length > 6) v = d.length === 11 ? `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}` : `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}`;
+  tel.value = v;
+});
+const MSG = { nome:'Informe seu nome.', email:'Informe um e-mail válido.', telefone:'Informe um telefone com DDD.', mensagem:'Escreva sua mensagem.' };
+function validate(){
+  let ok = true, first = null;
+  ['nome','email','telefone','mensagem'].forEach(n => {
+    const c = form[n], bad = !c.value.trim() || !c.checkValidity();
+    c.classList.toggle('bad', bad); c.setAttribute('aria-invalid', String(bad));
+    c.parentElement.querySelector('.err').textContent = bad ? MSG[n] : '';
+    if (bad){ ok = false; first ??= c; }
+  });
+  const lg = form.lgpd.checked; $('#lgpdErr').textContent = lg ? '' : 'É necessário concordar para enviar.';
+  if (!lg){ ok = false; first ??= form.lgpd; }
+  first?.focus(); return ok;
+}
+form.addEventListener('submit', async e => {
+  e.preventDefault(); $('#serr').textContent = '';
+  if (!validate()) return;
+  const send = $('#send'), lbl = $('#sendLbl');
+  send.disabled = true; lbl.textContent = 'Enviando…';
+  try {
+    if (!form.empresa_site.value){
+      const r = await sb('contatos', { method:'POST', headers:{ Prefer:'return=minimal' }, body: JSON.stringify({
+        nome: form.nome.value.trim(), endereco: form.endereco.value.trim() || null, email: form.email.value.trim(),
+        telefone: form.telefone.value.trim(), assunto: form.assunto.value, mensagem: form.mensagem.value.trim(), consentimento_lgpd: true
+      })});
+      if (!r.ok) throw new Error(r.status);
+    }
+    modal.classList.add('done'); $('#mDone').focus();
+  } catch {
+    $('#serr').textContent = 'Não foi possível enviar agora. Tente novamente ou ligue (61) 3322-0522.';
+  } finally { send.disabled = false; lbl.textContent = 'Enviar mensagem'; }
+});
+
+/* ---------- lightbox ---------- */
+const lb = $('#lb'); let lbItems = [], lbI = 0, lbOpen = false, lbFrom = null;
+function lbShow(){
+  const body = $('#lbBody'); body.replaceChildren();
+  if (!lbItems.length){ body.append(el('p', 'lb__empty', 'Fotos em breve.')); $('#lbCap').textContent = ''; return; }
+  const f = lbItems[lbI];
+  if (lbItems.length > 1){ const p = el('button', 'lb__nav prev'); p.setAttribute('aria-label', 'Foto anterior'); p.append(svg('arrow')); p.onclick = () => { lbI = (lbI - 1 + lbItems.length) % lbItems.length; lbShow(); }; body.append(p); }
+  const im = el('img', 'lb__img'); im.src = safeHref(f.url) || ''; im.alt = f.legenda || $('#lbTitle').textContent; body.append(im);
+  if (lbItems.length > 1){ const n = el('button', 'lb__nav'); n.setAttribute('aria-label', 'Próxima foto'); n.append(svg('arrow')); n.onclick = () => { lbI = (lbI + 1) % lbItems.length; lbShow(); }; body.append(n); }
+  $('#lbCap').textContent = [f.legenda, lbItems.length > 1 ? `${lbI + 1} / ${lbItems.length}` : ''].filter(Boolean).join(' · ');
+}
+function openLightbox(g, from){
+  lbFrom = from; lbItems = (g.fotos || []).filter(f => safeHref(f.url)); lbI = 0;
+  $('#lbTitle').textContent = g.titulo; lbShow();
+  lbOpen = true; lb.classList.add('open'); stopScroll(); setTimeout(() => $('#lbClose').focus(), 50);
+}
+function closeLightbox(){ if (!lbOpen) return; lbOpen = false; lb.classList.remove('open'); startScroll(); lbFrom?.focus(); }
+$('#lbClose').onclick = closeLightbox;
+lb.addEventListener('click', e => { if (e.target === lb || e.target.id === 'lbBody') closeLightbox(); });
+lb.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+  if (lbItems.length > 1 && e.key === 'ArrowRight'){ lbI = (lbI + 1) % lbItems.length; lbShow(); }
+  if (lbItems.length > 1 && e.key === 'ArrowLeft'){ lbI = (lbI - 1 + lbItems.length) % lbItems.length; lbShow(); }
+  trap(lb, e);
+});
+
+/* ---------- toast ---------- */
+let toastT;
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3200); }
+
+/* ---------- global click routing ---------- */
+document.addEventListener('click', e => {
+  const go = e.target.closest('[data-go]');
+  if (go){ e.preventDefault(); closeDD(); goTo(go.dataset.go); return; }
+  const c = e.target.closest('[data-contact]');
+  if (c){ e.preventDefault(); if (c.hasAttribute('data-close-menu')) closeMenu(); openModal(c.dataset.contact || null); return; }
+  const s = e.target.closest('[data-soon]');
+  if (s){ e.preventDefault(); toast('A Área do condômino estará disponível em breve.'); }
+});
+</script>
+</body>
+</html>
