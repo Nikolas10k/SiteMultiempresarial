@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Painel — Multiempresarial</title>
+<meta name="theme-color" content="#1b3630" />
+<link rel="icon" href="assets/logo-multiempresarial.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#a92921; --red-h:#c2342b; --teal-0:#c1e1d9; --teal-1:#82c2b3; --teal-2:#50a390; --teal-3:#356d60; --teal-4:#1b3630;
+  --ink:#171514; --mut:rgba(23,21,20,.58); --line:rgba(23,21,20,.12); --paper:#f0f3f3; --card:#fff; --dark:#1e1a16;
+  --serif:'Bodoni Moda',Didot,'Times New Roman',serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5;min-height:100vh}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:none;border:0}
+img{display:block;max-width:100%}
+ul{list-style:none}
+.ic{width:1em;height:1em;flex:none}
+:focus-visible{outline:2px solid var(--teal-2);outline-offset:2px}
+.hidden{display:none!important}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1}
+.lbl{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+
+/* botões e campos */
+.btn{height:38px;padding:0 16px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:500;font-size:13px;white-space:nowrap;transition:background .2s,box-shadow .2s,opacity .2s}
+.btn:disabled{opacity:.5;cursor:default}
+.btn--red{background:var(--red);color:#fff}.btn--red:hover:not(:disabled){background:var(--red-h)}
+.btn--dark{background:var(--ink);color:#fff}.btn--dark:hover:not(:disabled){background:#000}
+.btn--line{box-shadow:inset 0 0 0 1px var(--line);background:#fff}.btn--line:hover:not(:disabled){box-shadow:inset 0 0 0 1px rgba(23,21,20,.35)}
+.btn--ghost{color:var(--mut)}.btn--ghost:hover{color:var(--ink);background:rgba(0,0,0,.04)}
+.btn--danger{color:var(--red)}.btn--danger:hover{background:rgba(169,41,33,.08)}
+.btn--sm{height:30px;padding:0 10px;font-size:12px}
+.btn--icon{width:30px;padding:0}
+.fld{display:grid;gap:5px}
+.fld>span{font-size:12px;font-weight:500;color:var(--mut)}
+.ctl{width:100%;height:40px;padding:0 12px;border-radius:8px;border:1px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+textarea.ctl{height:auto;min-height:110px;padding:10px 12px;resize:vertical}
+.ctl:focus{border-color:var(--teal-2);box-shadow:0 0 0 3px rgba(80,163,144,.18)}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer}
+.chk input{width:16px;height:16px;accent-color:var(--teal-3)}
+.grid2{display:grid;gap:14px}
+@media (min-width:640px){.grid2{grid-template-columns:1fr 1fr}}
+.help{font-size:12px;color:var(--mut)}
+
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;padding:24px 16px;background:linear-gradient(180deg,var(--teal-4),var(--teal-3) 55%,var(--teal-2))}
+.login__card{width:min(400px,100%);background:#fff;border-radius:14px;padding:32px 28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+.login__mark{display:flex;align-items:center;gap:12px}
+.login__mark svg{width:40px;height:40px}
+.login__mark b{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1}
+.login h1{margin-top:26px;font-size:36px}
+.login p.sub{margin-top:8px;color:var(--mut)}
+.login form{margin-top:24px;display:grid;gap:14px}
+.login .err{min-height:18px;font-size:13px;color:var(--red)}
+
+/* app */
+.app{display:grid;min-height:100vh}
+@media (min-width:900px){.app{grid-template-columns:240px 1fr}}
+.side{background:var(--teal-4);color:#eef3f2;padding:16px;display:flex;flex-direction:column;gap:16px}
+@media (min-width:900px){.side{position:sticky;top:0;height:100vh;padding:24px 18px}}
+.side__brand{display:flex;align-items:center;gap:10px}
+.side__brand svg{width:34px;height:34px;flex:none}
+.side__brand b{font-family:var(--serif);font-weight:400;font-size:17px;line-height:1}
+.side__brand small{display:block;font-size:11px;opacity:.6;margin-top:3px}
+.nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+.nav::-webkit-scrollbar{display:none}
+@media (min-width:900px){.nav{flex-direction:column;margin:8px 0 0;padding:0}}
+.nav button{display:flex;align-items:center;gap:10px;height:38px;padding:0 12px;border-radius:8px;color:rgba(238,243,242,.75);white-space:nowrap;text-align:left}
+.nav button:hover{background:rgba(255,255,255,.07);color:#fff}
+.nav button.on{background:rgba(130,194,179,.18);color:#fff}
+.nav .ic{font-size:17px}
+.nav .badge{margin-left:auto;min-width:20px;height:20px;border-radius:10px;background:var(--red);color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center;padding:0 6px}
+.side__foot{display:none;margin-top:auto;font-size:12px;color:rgba(238,243,242,.65)}
+@media (min-width:900px){.side__foot{display:grid;gap:8px}}
+.side__foot a,.side__foot button{color:rgba(238,243,242,.85);text-align:left}
+.side__foot a:hover,.side__foot button:hover{color:#fff;text-decoration:underline}
+.mobilebar{display:flex;gap:8px;justify-content:space-between;align-items:center}
+@media (min-width:900px){.mobilebar{display:none}}
+.mobilebar a,.mobilebar button{font-size:12px;color:rgba(238,243,242,.85)}
+
+.main{padding:24px 16px 80px;min-width:0}
+@media (min-width:768px){.main{padding:36px 40px 80px}}
+.head{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;justify-content:space-between;margin-bottom:22px}
+.head h1{font-size:clamp(32px,4vw,44px)}
+.head p{margin-top:6px;color:var(--mut);max-width:60ch}
+.card{background:var(--card);border-radius:12px;box-shadow:0 0 0 1px var(--line)}
+.pad{padding:20px}
+.stack{display:grid;gap:14px}
+
+.list{display:grid}
+.row{display:grid;grid-template-columns:1fr auto;gap:6px 14px;align-items:center;padding:14px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row h3{font-size:15px;font-weight:600}
+.row .meta{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--mut);margin-top:2px}
+.row .acts{display:flex;gap:4px;align-items:center}
+.row.off h3{color:var(--mut)}
+.pill{display:inline-flex;align-items:center;height:20px;padding:0 8px;border-radius:10px;font-size:11px;font-weight:600}
+.pill--off{background:rgba(23,21,20,.08);color:var(--mut)}
+.pill--urg{background:rgba(169,41,33,.12);color:var(--red)}
+.pill--new{background:rgba(80,163,144,.16);color:var(--teal-3)}
+.empty{padding:36px 18px;text-align:center;color:var(--mut)}
+.sechead{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.sechead h2{font-size:22px}
+
+/* galeria */
+.albums{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.album{overflow:hidden;text-align:left;display:flex;flex-direction:column;transition:box-shadow .2s,transform .3s}
+.album:hover{box-shadow:0 0 0 1px rgba(23,21,20,.3),0 14px 30px -18px rgba(0,0,0,.4);transform:translateY(-2px)}
+.album__img{position:relative;width:100%;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(160deg,var(--teal-3),var(--teal-4));display:grid;place-items:center;color:rgba(255,255,255,.7);font-family:var(--serif);font-size:18px}
+.album__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.album__b{padding:12px 14px}
+.album__b h3{font-size:15px;font-weight:600}
+.album__b p{font-size:12px;color:var(--mut)}
+.drop{border:2px dashed rgba(53,109,96,.35);border-radius:12px;padding:26px 16px;text-align:center;color:var(--mut);background:rgba(193,225,217,.18);transition:background .2s,border-color .2s;cursor:pointer}
+.drop.over{background:rgba(193,225,217,.45);border-color:var(--teal-3)}
+.drop b{color:var(--teal-3)}
+.photos{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.photo{overflow:hidden;display:flex;flex-direction:column}
+.photo__img{position:relative;overflow:hidden;aspect-ratio:4/3;background:#ddd}
+.photo__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo__cap{position:absolute;left:8px;top:8px;background:var(--teal-3);color:#fff;font-size:10px;font-weight:600;padding:2px 7px;border-radius:9px;letter-spacing:.04em;text-transform:uppercase}
+.photo__b{padding:8px;display:grid;gap:6px}
+.photo__b input{height:32px;font-size:12px}
+.photo__acts{display:flex;justify-content:space-between}
+.progress{font-size:12px;color:var(--teal-3);font-weight:500}
+
+/* mensagens */
+.msg{padding:16px 18px;border-top:1px solid var(--line);display:grid;gap:6px}
+.msg:first-child{border-top:0}
+.msg.unread{background:rgba(193,225,217,.2)}
+.msg__top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px}
+.msg__top b{font-size:15px}
+.msg__ctt{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px}
+.msg__ctt a{color:var(--teal-3)}
+.msg__txt{white-space:pre-wrap;font-size:14px}
+.msg__acts{display:flex;gap:6px;margin-top:4px}
+
+/* modal */
+.dlg{position:fixed;inset:0;z-index:50;background:rgba(15,20,19,.5);display:flex;align-items:center;justify-content:center;padding:16px}
+.dlg__p{width:min(620px,100%);max-height:calc(100vh - 32px);overflow:auto;background:#fff;border-radius:14px;padding:24px;box-shadow:0 40px 80px -20px rgba(0,0,0,.5)}
+.dlg__p h2{font-size:28px;margin-bottom:18px}
+.dlg__f{display:flex;justify-content:flex-end;gap:8px;margin-top:20px;flex-wrap:wrap}
+.dlg .err{font-size:13px;color:var(--red);min-height:0}
+.toast{position:fixed;left:50%;bottom:24px;z-index:60;transform:translate(-50%,16px);opacity:0;pointer-events:none;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;transition:opacity .25s,transform .35s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast.bad{background:var(--red)}
+.spinner{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--teal-3);animation:spin .8s linear infinite;margin:30px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tip{display:flex;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(169,41,33,.06);color:#6b1d17;font-size:13px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 48 48" fill="none"><path d="M14 6v22M19 2v26M24 6v22M29 2v26M34 6v22" stroke="#b9bcbc" stroke-width="2.4"/><path d="M22 26.5a8 7 0 1 0 0 11" stroke="#a92921" stroke-width="3.4"/><path d="M22 21.5a8 6.5 0 1 1 3 12" stroke="currentColor" stroke-width="3.4"/><ellipse cx="30" cy="35" rx="10" ry="7.5" stroke="#82c2b3" stroke-width="3.4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-9 8"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+</svg>
+
+<!-- Login -->
+<section class="login hidden" id="login">
+  <div class="login__card">
+    <div class="login__mark"><svg aria-hidden="true"><use href="#i-mark"/></svg><b>Novo Centro<br>Multiempresarial</b></div>
+    <h1 class="serif">Painel de <i>administração</i></h1>
+    <p class="sub">Acesso restrito ao síndico e à administração.</p>
+    <form id="loginForm" novalidate>
+      <label class="fld"><span>Usuário</span><input class="ctl" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+      <label class="fld"><span>Senha</span><input class="ctl" name="senha" type="password" autocomplete="current-password" required></label>
+      <p class="err" id="loginErr" role="alert"></p>
+      <button class="btn btn--red" type="submit" id="loginBtn">Entrar</button>
+    </form>
+  </div>
+</section>
+
+<!-- App -->
+<div class="app hidden" id="app">
+  <aside class="side">
+    <div class="side__brand"><svg aria-hidden="true"><use href="#i-mark"/></svg><div><b>Multiempresarial</b><small>Painel · <span id="who"></span></small></div></div>
+    <nav class="nav" id="nav" aria-label="Seções do painel">
+      <button data-view="avisos"><svg class="ic"><use href="#i-bell"/></svg>Avisos</button>
+      <button data-view="documentos"><svg class="ic"><use href="#i-file"/></svg>Documentos</button>
+      <button data-view="galeria"><svg class="ic"><use href="#i-img"/></svg>Galeria</button>
+      <button data-view="mensagens"><svg class="ic"><use href="#i-mail"/></svg>Mensagens<span class="badge hidden" id="msgBadge"></span></button>
+      <button data-view="conta"><svg class="ic"><use href="#i-user"/></svg>Minha conta</button>
+    </nav>
+    <div class="mobilebar"><a href="/" target="_blank" rel="noopener">Ver site ↗</a><button data-logout>Sair</button></div>
+    <div class="side__foot"><a href="/" target="_blank" rel="noopener">Ver o site ↗</a><button data-logout>Sair</button></div>
+  </aside>
+  <main class="main" id="main" tabindex="-1"></main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="module">
+/* ---------- Supabase (REST) ---------- */
+const SUPABASE_URL = 'https://wekdopgrtqrizmznbirf.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_Q04s3B217vNsJtmtrGiHmA_oRwLU67Z'; // chave pública (publishable)
+const DOMINIO = 'painel.multiempresarial.com.br'; // usuário "sindico" → sindico@painel.multiempresarial.com.br
+const SKEY = 'multi-admin-sessao';
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const svg = id => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('class', 'ic'); s.setAttribute('aria-hidden', 'true'); const u = document.createElementNS('http://www.w3.org/2000/svg', 'use'); u.setAttribute('href', `#i-${id}`); s.append(u); return s; };
+const btn = (cls, label, opts = {}) => { const b = el('button', `btn ${cls}`); b.type = 'button'; if (opts.icon) b.append(svg(opts.icon)); if (label) b.append(document.createTextNode(label)); if (opts.title){ b.title = opts.title; b.setAttribute('aria-label', opts.title); } if (opts.onclick) b.onclick = opts.onclick; return b; };
+const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const fmtData = s => { const [y, m, d] = String(s).slice(0, 10).split('-').map(Number); return (y && m && d) ? `${d} ${MES[m-1]} ${y}` : ''; };
+const fmtDataHora = s => { const d = new Date(s); return isNaN(d) ? '' : d.toLocaleString('pt-BR', { timeZone:'America/Sao_Paulo', day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' }); };
+const hoje = () => new Intl.DateTimeFormat('en-CA', { timeZone:'America/Sao_Paulo' }).format(new Date());
+const slug = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50) || 'arquivo';
+const publicUrl = (bucket, path) => `${SUPABASE_URL}/storage/v1/object/public/${bucket}/${path}`;
+const storagePath = (bucket, url) => { const p = `${SUPABASE_URL}/storage/v1/object/public/${bucket}/`; return typeof url === 'string' && url.startsWith(p) ? decodeURIComponent(url.slice(p.length)) : null; };
+// site usa caminhos relativos (assets/...) para as fotos que vieram com o projeto
+const imgSrc = u => !u ? '' : /^https?:/.test(u) ? u : `/${u.replace(/^\//, '')}`;
+const thumb = u => /\.jpg$/.test(u || '') && (/^assets\/galeria\//.test(u) || storagePath('galeria', u)) ? imgSrc(u.replace(/\.jpg$/, '-sm.jpg')) : imgSrc(u);
+
+let toastT;
+function toast(msg, bad = false){ const t = $('#toast'); t.textContent = msg; t.classList.toggle('bad', bad); t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 3200); }
+
+/* ---------- sessão ---------- */
+let sessao = null;
+try { sessao = JSON.parse(localStorage.getItem(SKEY) || 'null'); } catch {}
+const salvar = s => { sessao = s; try { s ? localStorage.setItem(SKEY, JSON.stringify(s)) : localStorage.removeItem(SKEY); } catch {} };
+async function auth(path, body, token){
+  const r = await fetch(`${SUPABASE_URL}/auth/v1/${path}`, { method: body ? (path === 'user' ? 'PUT' : 'POST') : 'POST',
+    headers: { apikey: SUPABASE_KEY, 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+    body: body ? JSON.stringify(body) : undefined });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw Object.assign(new Error(j.msg || j.error_description || j.message || r.status), { status: r.status, code: j.error_code });
+  return j;
+}
+const guardar = j => salvar({ access_token: j.access_token, refresh_token: j.refresh_token, expires_at: Math.floor(Date.now() / 1000) + (j.expires_in || 3600), user: j.user, admin: sessao?.admin });
+async function token(){
+  if (!sessao) throw Object.assign(new Error('sem sessão'), { status: 401 });
+  if (sessao.expires_at - 60 < Date.now() / 1000){
+    try { guardar(await auth('token?grant_type=refresh_token', { refresh_token: sessao.refresh_token })); }
+    catch (e){ sair(true); throw e; }
+  }
+  return sessao.access_token;
+}
+async function api(path, { method = 'GET', body, prefer } = {}){
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { method,
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${await token()}`, ...(body ? { 'Content-Type': 'application/json' } : {}), ...(prefer ? { Prefer: prefer } : {}) },
+    body: body ? JSON.stringify(body) : undefined });
+  if (r.status === 401){ sair(true); throw new Error('Sessão expirada'); }
+  if (!r.ok){ const j = await r.json().catch(() => ({})); throw new Error(j.message || `Erro ${r.status}`); }
+  const txt = await r.text();
+  return txt ? JSON.parse(txt) : null;
+}
+async function upload(bucket, path, blob, type){
+  const r = await fetch(`${SUPABASE_URL}/storage/v1/object/${bucket}/${path}`, { method: 'POST',
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${await token()}`, 'Content-Type': type || blob.type || 'application/octet-stream', 'cache-control': '31536000', 'x-upsert': 'false' }, body: blob });
+  if (!r.ok){ const j = await r.json().catch(() => ({})); throw new Error(j.message || j.error || `Falha no envio (${r.status})`); }
+  return publicUrl(bucket, path);
+}
+async function removerArquivos(bucket, paths){
+  paths = paths.filter(Boolean); if (!paths.length) return;
+  await fetch(`${SUPABASE_URL}/storage/v1/object/${bucket}`, { method: 'DELETE',
+    headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${await token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ prefixes: paths }) }).catch(() => {});
+}
+
+/* ---------- login ---------- */
+$('#loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target, usuario = f.usuario.value.trim().toLowerCase(), senha = f.senha.value;
+  const err = $('#loginErr'); err.textContent = '';
+  if (!usuario || !senha){ err.textContent = 'Informe usuário e senha.'; return; }
+  const b = $('#loginBtn'); b.disabled = true; b.textContent = 'Entrando…';
+  try {
+    guardar(await auth('token?grant_type=password', { email: `${usuario}@${DOMINIO}`, password: senha }));
+    const eu = await api(`admins?select=usuario,nome&user_id=eq.${sessao.user.id}`);
+    if (!eu?.length){ await sair(); err.textContent = 'Este usuário não tem acesso ao painel.'; return; }
+    salvar({ ...sessao, admin: eu[0] });
+    f.reset(); iniciar();
+  } catch (x){
+    err.textContent = x.code === 'invalid_credentials' || x.status === 400 ? 'Usuário ou senha incorretos.' : 'Não foi possível entrar agora. Tente novamente.';
+  } finally { b.disabled = false; b.textContent = 'Entrar'; }
+});
+async function sair(expirou = false){
+  const t = sessao?.access_token; salvar(null);
+  if (t) fetch(`${SUPABASE_URL}/auth/v1/logout`, { method: 'POST', headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${t}` } }).catch(() => {});
+  $('#app').classList.add('hidden'); $('#login').classList.remove('hidden');
+  if (expirou) $('#loginErr').textContent = 'Sua sessão expirou. Entre novamente.';
+  setTimeout(() => $('#loginForm').usuario.focus(), 30);
+}
+$$('[data-logout]').forEach(b => b.onclick = () => sair());
+
+/* ---------- navegação ---------- */
+const VIEWS = { avisos: viewAvisos, documentos: viewDocumentos, galeria: viewGaleria, mensagens: viewMensagens, conta: viewConta };
+let atual = null;
+function ir(view, ...args){
+  if (!VIEWS[view]) view = 'avisos';
+  atual = view;
+  $$('#nav button').forEach(b => b.classList.toggle('on', b.dataset.view === view));
+  if (location.hash !== `#${view}`) history.replaceState(null, '', `#${view}`);
+  const m = $('#main'); m.replaceChildren(el('div', 'spinner'));
+  VIEWS[view](m, ...args).catch(e => { m.replaceChildren(el('p', 'empty', `Não foi possível carregar: ${e.message}`)); });
+  window.scrollTo(0, 0);
+}
+$$('#nav button').forEach(b => b.onclick = () => ir(b.dataset.view));
+function iniciar(){
+  $('#login').classList.add('hidden'); $('#app').classList.remove('hidden');
+  $('#who').textContent = sessao.admin?.nome || '';
+  ir(location.hash.slice(1) || 'avisos');
+  contarNaoLidas();
+}
+async function contarNaoLidas(){
+  try {
+    const r = await api('contatos?select=id&lido=eq.false');
+    const b = $('#msgBadge'); b.textContent = r.length; b.classList.toggle('hidden', !r.length);
+  } catch {}
+}
+function cabecalho(titulo, texto, ...acoes){
+  const h = el('div', 'head'); const t = el('div'); t.append(el('h1', 'serif', titulo)); if (texto) t.append(el('p', null, texto));
+  const a = el('div'); a.style.cssText = 'display:flex;gap:8px;flex-wrap:wrap'; a.append(...acoes); h.append(t, a); return h;
+}
+
+/* ---------- diálogo genérico ---------- */
+function dialogo(titulo, corpo, { salvar: onSave, rotulo = 'Salvar' } = {}){
+  return new Promise(resolve => {
+    const d = el('div', 'dlg'); d.setAttribute('role', 'dialog'); d.setAttribute('aria-modal', 'true');
+    const p = el('div', 'dlg__p'); const h = el('h2', 'serif', titulo); const erro = el('p', 'err'); erro.setAttribute('role', 'alert');
+    const f = el('div', 'dlg__f');
+    const fechar = v => { d.remove(); document.removeEventListener('keydown', esc); resolve(v); };
+    const esc = e => { if (e.key === 'Escape') fechar(null); };
+    const ok = btn('btn--red', rotulo, { onclick: async () => {
+      erro.textContent = ''; ok.disabled = true; const txt = ok.textContent; ok.textContent = 'Salvando…';
+      try { const v = await onSave(); fechar(v ?? true); }
+      catch (e){ erro.textContent = e.message; ok.disabled = false; ok.textContent = txt; }
+    } });
+    f.append(btn('btn--line', 'Cancelar', { onclick: () => fechar(null) }), ok);
+    p.append(h, corpo, erro, f); d.append(p); document.body.append(d);
+    d.addEventListener('click', e => { if (e.target === d) fechar(null); });
+    document.addEventListener('keydown', esc);
+    setTimeout(() => p.querySelector('input,textarea,select')?.focus(), 30);
+  });
+}
+function campo(rotulo, input, ajuda){ const l = el('label', 'fld'); l.append(el('span', null, rotulo), input); if (ajuda) l.append(el('small', 'help', ajuda)); return l; }
+function entrada(valor = '', attrs = {}){ const i = el(attrs.tag || 'input', 'ctl'); delete attrs.tag; Object.assign(i, attrs); i.value = valor ?? ''; return i; }
+function marcar(rotulo, valor){ const l = el('label', 'chk'); const i = el('input'); i.type = 'checkbox'; i.checked = !!valor; l.append(i, document.createTextNode(rotulo)); l.input = i; return l; }
+const confirmar = msg => window.confirm(msg);
+
+/* ---------- reordenação (troca de "ordem" com o vizinho) ---------- */
+async function trocarOrdem(tabela, a, b){
+  if (!a || !b) return;
+  const oa = a.ordem, ob = b.ordem === a.ordem ? a.ordem + 1 : b.ordem;
+  await api(`${tabela}?id=eq.${a.id}`, { method: 'PATCH', body: { ordem: ob } });
+  await api(`${tabela}?id=eq.${b.id}`, { method: 'PATCH', body: { ordem: oa } });
+}
+
+/* =================== AVISOS =================== */
+async function viewAvisos(m){
+  const lista = await api('avisos?select=*&order=data.desc,id.desc');
+  const card = el('div', 'card list');
+  if (!lista.length) card.append(el('p', 'empty', 'Nenhum aviso cadastrado. Clique em "Novo aviso" para publicar o primeiro.'));
+  lista.forEach(a => {
+    const r = el('div', `row${a.publicado ? '' : ' off'}`);
+    const t = el('div'); t.append(el('h3', null, a.titulo));
+    const meta = el('div', 'meta'); meta.append(el('span', null, fmtData(a.data)), el('span', null, a.categoria));
+    if (a.urgente) meta.append(el('span', 'pill pill--urg', 'Urgente'));
+    if (!a.publicado) meta.append(el('span', 'pill pill--off', 'Fora do ar'));
+    t.append(meta);
+    const acts = el('div', 'acts');
+    acts.append(
+      btn('btn--ghost btn--sm', a.publicado ? 'Tirar do ar' : 'Publicar', { onclick: async () => { await api(`avisos?id=eq.${a.id}`, { method: 'PATCH', body: { publicado: !a.publicado } }); toast(a.publicado ? 'Aviso retirado do site.' : 'Aviso publicado.'); ir('avisos'); } }),
+      btn('btn--ghost btn--sm btn--icon', '', { icon: 'edit', title: 'Editar', onclick: () => editarAviso(a) }),
+      btn('btn--danger btn--sm btn--icon', '', { icon: 'trash', title: 'Apagar', onclick: async () => { if (!confirmar(`Apagar o aviso "${a.titulo}"?`)) return; await api(`avisos?id=eq.${a.id}`, { method: 'DELETE' }); toast('Aviso apagado.'); ir('avisos'); } }),
+    );
+    r.append(t, acts); card.append(r);
+  });
+  m.replaceChildren(cabecalho('Avisos', 'Comunicados exibidos na seção "Avisos" do site. Os 6 mais recentes publicados aparecem no site.', btn('btn--red', 'Novo aviso', { icon: 'plus', onclick: () => editarAviso() })), card);
+}
+async function editarAviso(a = {}){
+  const titulo = entrada(a.titulo, { maxLength: 200 });
+  const data = entrada(a.data || hoje(), { type: 'date' });
+  const categoria = entrada(a.categoria || 'Administração', { maxLength: 60 });
+  const texto = entrada(a.texto, { tag: 'textarea', maxLength: 4000 });
+  const link = entrada(a.link || '', { type: 'url', placeholder: 'https://… (opcional)' });
+  const urg = marcar('Marcar como urgente', a.urgente), pub = marcar('Publicado no site', a.id ? a.publicado : true);
+  const g = el('div', 'grid2'); g.append(campo('Data', data), campo('Categoria', categoria, 'Ex.: Administração, Manutenção, Financeiro'));
+  const corpo = el('div', 'stack'); corpo.append(campo('Título', titulo), g, campo('Texto', texto), campo('Link (opcional)', link, 'Endereço de uma página ou documento com mais detalhes.'), urg, pub);
+  const ok = await dialogo(a.id ? 'Editar aviso' : 'Novo aviso', corpo, { rotulo: a.id ? 'Salvar' : 'Publicar', salvar: async () => {
+    if (!titulo.value.trim()) throw new Error('Informe o título.');
+    if (!texto.value.trim()) throw new Error('Escreva o texto do aviso.');
+    const l = link.value.trim(); if (l && !/^https?:\/\//i.test(l)) throw new Error('O link deve começar com https://');
+    const body = { titulo: titulo.value.trim(), data: data.value || hoje(), categoria: categoria.value.trim() || 'Administração', texto: texto.value.trim(), link: l || null, urgente: urg.input.checked, publicado: pub.input.checked };
+    await api(a.id ? `avisos?id=eq.${a.id}` : 'avisos', { method: a.id ? 'PATCH' : 'POST', body, prefer: 'return=minimal' });
+  } });
+  if (ok){ toast('Aviso salvo.'); ir('avisos'); }
+}
+
+/* =================== DOCUMENTOS =================== */
+const SECOES = { condominio: ['Condomínio', 'Lista "Tudo sobre o condomínio" (atas, financeiro, convenção…).'], downloads: ['Downloads', 'Cartão "Documentos e formulários" ao lado dos classificados.'] };
+async function viewDocumentos(m){
+  const docs = await api('documentos?select=*&order=ordem,id');
+  const blocos = Object.entries(SECOES).map(([sec, [nome, desc]]) => {
+    const itens = docs.filter(d => d.secao === sec);
+    const card = el('div', 'card');
+    const h = el('div', 'sechead'); const ht = el('div'); ht.append(el('h2', 'serif', nome), el('p', 'help', desc));
+    h.append(ht, btn('btn--line btn--sm', 'Adicionar', { icon: 'plus', onclick: () => editarDoc({ secao: sec, ordem: (itens.at(-1)?.ordem ?? 0) + 1 }) }));
+    const list = el('div', 'list');
+    if (!itens.length) list.append(el('p', 'empty', 'Nenhum item.'));
+    itens.forEach((d, i) => {
+      const r = el('div', `row${d.publicado ? '' : ' off'}`);
+      const t = el('div'); t.append(el('h3', null, d.titulo));
+      const meta = el('div', 'meta'); if (d.descricao) meta.append(el('span', null, d.descricao));
+      if (d.href){ const a = el('a', null, 'Abrir arquivo ↗'); a.href = imgSrc(d.href); a.target = '_blank'; a.rel = 'noopener'; a.style.color = 'var(--teal-3)'; meta.append(a); }
+      else meta.append(el('span', 'pill pill--off', 'Sem arquivo — aparece como "Em breve"'));
+      if (!d.publicado) meta.append(el('span', 'pill pill--off', 'Fora do ar'));
+      t.append(meta);
+      const acts = el('div', 'acts');
+      const up = btn('btn--ghost btn--sm btn--icon', '', { icon: 'up', title: 'Subir', onclick: async () => { await trocarOrdem('documentos', d, itens[i-1]); ir('documentos'); } }); up.disabled = i === 0;
+      const dn = btn('btn--ghost btn--sm btn--icon', '', { icon: 'down', title: 'Descer', onclick: async () => { await trocarOrdem('documentos', d, itens[i+1]); ir('documentos'); } }); dn.disabled = i === itens.length - 1;
+      acts.append(up, dn,
+        btn('btn--ghost btn--sm btn--icon', '', { icon: 'edit', title: 'Editar', onclick: () => editarDoc(d) }),
+        btn('btn--danger btn--sm btn--icon', '', { icon: 'trash', title: 'Apagar', onclick: async () => {
+          if (!confirmar(`Apagar "${d.titulo}"?`)) return;
+          await api(`documentos?id=eq.${d.id}`, { method: 'DELETE' }); await removerArquivos('documentos', [storagePath('documentos', d.href)]);
+          toast('Item apagado.'); ir('documentos'); } }));
+      r.append(t, acts); list.append(r);
+    });
+    card.append(h, list); return card;
+  });
+  const wrap = el('div', 'stack'); wrap.append(...blocos);
+  m.replaceChildren(cabecalho('Documentos', 'Envie PDFs (até 25 MB) ou informe um link. Itens sem arquivo aparecem no site como "Em breve".'), wrap);
+}
+async function editarDoc(d){
+  const titulo = entrada(d.titulo, { maxLength: 120 });
+  const descricao = entrada(d.descricao || '', { maxLength: 200 });
+  const secao = el('select', 'ctl'); Object.entries(SECOES).forEach(([k, [n]]) => { const o = el('option', null, n); o.value = k; secao.append(o); }); secao.value = d.secao;
+  const arquivo = el('input'); arquivo.type = 'file'; arquivo.accept = '.pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png'; arquivo.className = 'ctl'; arquivo.style.paddingTop = '8px';
+  const link = entrada(storagePath('documentos', d.href) ? '' : (d.href || ''), { type: 'url', placeholder: 'https://… (opcional, em vez de enviar arquivo)' });
+  const atual = d.href ? el('p', 'help', `Arquivo atual: ${decodeURIComponent(String(d.href).split('/').pop())}`) : null;
+  const pub = marcar('Publicado no site', d.id ? d.publicado : true);
+  const corpo = el('div', 'stack'); corpo.append(campo('Título', titulo), campo('Descrição (opcional)', descricao), campo('Seção', secao));
+  if (atual) corpo.append(atual);
+  corpo.append(campo(d.href ? 'Substituir arquivo' : 'Arquivo', arquivo, 'PDF, Word, Excel ou imagem — até 25 MB.'), campo('…ou link externo', link), pub);
+  const ok = await dialogo(d.id ? 'Editar documento' : 'Novo documento', corpo, { salvar: async () => {
+    if (!titulo.value.trim()) throw new Error('Informe o título.');
+    let href = d.href || null; const f = arquivo.files[0]; const l = link.value.trim();
+    if (f){
+      if (f.size > 25 * 1024 * 1024) throw new Error('O arquivo passa de 25 MB.');
+      const ext = (f.name.split('.').pop() || 'pdf').toLowerCase();
+      const novo = await upload('documentos', `${secao.value}/${Date.now()}-${slug(titulo.value)}.${ext}`, f);
+      if (storagePath('documentos', href)) await removerArquivos('documentos', [storagePath('documentos', href)]);
+      href = novo;
+    } else if (l){ if (!/^https?:\/\//i.test(l)) throw new Error('O link deve começar com https://'); href = l; }
+    const body = { titulo: titulo.value.trim(), descricao: descricao.value.trim() || null, secao: secao.value, href, publicado: pub.input.checked };
+    if (!d.id) body.ordem = d.ordem;
+    await api(d.id ? `documentos?id=eq.${d.id}` : 'documentos', { method: d.id ? 'PATCH' : 'POST', body, prefer: 'return=minimal' });
+  } });
+  if (ok){ toast('Documento salvo.'); ir('documentos'); }
+}
+
+/* =================== GALERIA =================== */
+async function viewGaleria(m, albumId){
+  if (albumId) return viewAlbum(m, albumId);
+  const albuns = await api('galeria_albuns?select=*,galeria_fotos(count)&order=ordem,id');
+  const grid = el('div', 'albums');
+  albuns.forEach((a, i) => {
+    const c = el('div', 'card album');
+    const img = el('button', 'album__img'); img.type = 'button'; img.setAttribute('aria-label', `Abrir álbum ${a.titulo}`); img.onclick = () => ir('galeria', a.id);
+    if (a.capa){ const im = el('img'); im.src = thumb(a.capa); im.alt = ''; im.loading = 'lazy'; img.append(im); } else img.append(document.createTextNode('Sem fotos'));
+    const b = el('div', 'album__b'); const n = a.galeria_fotos?.[0]?.count ?? 0;
+    b.append(el('h3', null, a.titulo), el('p', null, `${n} foto${n === 1 ? '' : 's'}${a.publicado ? '' : ' · fora do ar'}`));
+    const acts = el('div', 'acts'); acts.style.cssText = 'display:flex;gap:4px;margin-top:8px';
+    const up = btn('btn--ghost btn--sm btn--icon', '', { icon: 'left', title: 'Mover para antes', onclick: async () => { await trocarOrdem('galeria_albuns', a, albuns[i-1]); ir('galeria'); } }); up.disabled = i === 0;
+    const dn = btn('btn--ghost btn--sm btn--icon', '', { icon: 'right', title: 'Mover para depois', onclick: async () => { await trocarOrdem('galeria_albuns', a, albuns[i+1]); ir('galeria'); } }); dn.disabled = i === albuns.length - 1;
+    acts.append(up, dn, btn('btn--line btn--sm', 'Abrir', { onclick: () => ir('galeria', a.id) }));
+    b.append(acts); c.append(img, b); grid.append(c);
+  });
+  m.replaceChildren(cabecalho('Galeria', 'Álbuns da seção "Conheça o edifício". A ordem aqui é a ordem do site; os primeiros com capa aparecem no mosaico.',
+    btn('btn--red', 'Novo álbum', { icon: 'plus', onclick: () => editarAlbum({ ordem: (albuns.at(-1)?.ordem ?? 0) + 1 }) })), grid);
+}
+async function editarAlbum(a){
+  const titulo = entrada(a.titulo, { maxLength: 80 });
+  const descricao = entrada(a.descricao || '', { tag: 'textarea', maxLength: 300 }); descricao.style.minHeight = '80px';
+  const ano = entrada(a.ano || '', { type: 'number', min: 1990, max: 2100, placeholder: 'Opcional' });
+  const tags = entrada((a.tags || []).join(', '), { placeholder: 'Ex.: Eventos, Convenções' });
+  const pub = marcar('Publicado no site', a.id ? a.publicado : true);
+  const g = el('div', 'grid2'); g.append(campo('Ano', ano), campo('Etiquetas', tags, 'Separe por vírgula.'));
+  const corpo = el('div', 'stack'); corpo.append(campo('Nome do álbum', titulo), campo('Descrição', descricao), g, pub);
+  let novoId = null;
+  const ok = await dialogo(a.id ? 'Editar álbum' : 'Novo álbum', corpo, { salvar: async () => {
+    if (!titulo.value.trim()) throw new Error('Informe o nome do álbum.');
+    const body = { titulo: titulo.value.trim(), descricao: descricao.value.trim() || null, ano: ano.value ? Number(ano.value) : null,
+      tags: tags.value.split(',').map(t => t.trim()).filter(Boolean), publicado: pub.input.checked };
+    if (!a.id) body.ordem = a.ordem;
+    const r = await api(a.id ? `galeria_albuns?id=eq.${a.id}` : 'galeria_albuns', { method: a.id ? 'PATCH' : 'POST', body, prefer: 'return=representation' });
+    novoId = r?.[0]?.id;
+  } });
+  if (ok){ toast('Álbum salvo.'); ir('galeria', a.id || novoId); }
+}
+
+// Reduz para Full HD (1920px) + miniatura (960px), em JPEG. O canvas descarta metadados (GPS etc.).
+async function redimensionar(file, max, q){
+  let src;
+  try { src = await createImageBitmap(file, { imageOrientation: 'from-image' }); }
+  catch { src = await new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = no; i.src = URL.createObjectURL(file); }); }
+  const w = src.width, h = src.height, k = Math.min(1, max / Math.max(w, h));
+  const c = document.createElement('canvas'); c.width = Math.round(w * k); c.height = Math.round(h * k);
+  const x = c.getContext('2d'); x.imageSmoothingQuality = 'high'; x.drawImage(src, 0, 0, c.width, c.height);
+  return new Promise((ok, no) => c.toBlob(b => b ? ok(b) : no(new Error('Falha ao processar a imagem')), 'image/jpeg', q));
+}
+
+async function viewAlbum(m, id){
+  const [a] = await api(`galeria_albuns?select=*&id=eq.${id}`);
+  if (!a){ ir('galeria'); return; }
+  const fotos = await api(`galeria_fotos?select=*&album_id=eq.${id}&order=ordem,id`);
+  const voltar = btn('btn--ghost', 'Todos os álbuns', { icon: 'left', onclick: () => ir('galeria') });
+  const head = cabecalho(a.titulo, `${a.descricao || ''}${a.publicado ? '' : ' (fora do ar)'}`.trim(),
+    btn('btn--line', 'Editar álbum', { icon: 'edit', onclick: () => editarAlbum(a) }),
+    btn('btn--danger', 'Apagar álbum', { icon: 'trash', onclick: async () => {
+      if (!confirmar(`Apagar o álbum "${a.titulo}" e as ${fotos.length} fotos dele? Isso não pode ser desfeito.`)) return;
+      await api(`galeria_albuns?id=eq.${id}`, { method: 'DELETE' });
+      await removerArquivos('galeria', fotos.flatMap(f => { const p = storagePath('galeria', f.url); return p ? [p, p.replace(/\.jpg$/, '-sm.jpg')] : []; }));
+      toast('Álbum apagado.'); ir('galeria'); } }));
+
+  const tip = el('div', 'tip'); tip.append(el('span', null, 'Antes de enviar: confira se há rostos de pessoas ou placas de carro legíveis. Fotos com essas informações devem ser tratadas (desfocadas) antes de publicar.'));
+  const input = el('input'); input.type = 'file'; input.accept = 'image/jpeg,image/png,image/webp,image/heic'; input.multiple = true; input.hidden = true;
+  const drop = el('div', 'drop'); drop.tabIndex = 0; drop.setAttribute('role', 'button');
+  drop.innerHTML = '<b>Clique para escolher fotos</b> ou arraste aqui.<br><small>JPG ou PNG. As fotos são ajustadas automaticamente para Full HD.</small>';
+  const prog = el('p', 'progress');
+  drop.onclick = () => input.click(); drop.onkeydown = e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); input.click(); } };
+  drop.ondragover = e => { e.preventDefault(); drop.classList.add('over'); };
+  drop.ondragleave = () => drop.classList.remove('over');
+  drop.ondrop = e => { e.preventDefault(); drop.classList.remove('over'); enviar([...e.dataTransfer.files]); };
+  input.onchange = () => { enviar([...input.files]); input.value = ''; };
+  async function enviar(files){
+    files = files.filter(f => /^image\//.test(f.type) || /\.(jpe?g|png|webp|heic)$/i.test(f.name)); if (!files.length) return;
+    let ordem = (fotos.at(-1)?.ordem ?? 0), feitos = 0, primeira = null;
+    drop.style.pointerEvents = 'none';
+    for (const f of files){
+      prog.textContent = `Enviando ${feitos + 1} de ${files.length}…`;
+      try {
+        const base = `albuns/${id}/${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
+        const [grande, peq] = await Promise.all([redimensionar(f, 1920, .82), redimensionar(f, 960, .76)]);
+        const url = await upload('galeria', `${base}.jpg`, grande, 'image/jpeg');
+        await upload('galeria', `${base}-sm.jpg`, peq, 'image/jpeg');
+        await api('galeria_fotos', { method: 'POST', body: { album_id: id, url, ordem: ++ordem, legenda: null }, prefer: 'return=minimal' });
+        primeira ??= url; feitos++;
+      } catch (e){ toast(`Falha em "${f.name}": ${e.message}`, true); }
+    }
+    if (!a.capa && primeira) await api(`galeria_albuns?id=eq.${id}`, { method: 'PATCH', body: { capa: primeira } });
+    toast(`${feitos} foto${feitos === 1 ? '' : 's'} enviada${feitos === 1 ? '' : 's'}.`); ir('galeria', id);
+  }
+
+  const grid = el('div', 'photos');
+  if (!fotos.length) grid.append(el('p', 'empty', 'Nenhuma foto neste álbum ainda.'));
+  fotos.forEach((f, i) => {
+    const c = el('div', 'card photo'); const box = el('div', 'photo__img');
+    const im = el('img'); im.src = thumb(f.url); im.alt = f.legenda || ''; im.loading = 'lazy'; box.append(im);
+    if (a.capa === f.url) box.append(el('span', 'photo__cap', 'Capa'));
+    const b = el('div', 'photo__b');
+    const leg = entrada(f.legenda || '', { placeholder: 'Legenda (opcional)', maxLength: 120 });
+    leg.onchange = async () => { await api(`galeria_fotos?id=eq.${f.id}`, { method: 'PATCH', body: { legenda: leg.value.trim() || null } }); toast('Legenda salva.'); };
+    const acts = el('div', 'photo__acts');
+    const esq = el('div'); esq.style.display = 'flex';
+    const up = btn('btn--ghost btn--sm btn--icon', '', { icon: 'left', title: 'Mover para antes', onclick: async () => { await trocarOrdem('galeria_fotos', f, fotos[i-1]); ir('galeria', id); } }); up.disabled = i === 0;
+    const dn = btn('btn--ghost btn--sm btn--icon', '', { icon: 'right', title: 'Mover para depois', onclick: async () => { await trocarOrdem('galeria_fotos', f, fotos[i+1]); ir('galeria', id); } }); dn.disabled = i === fotos.length - 1;
+    esq.append(up, dn);
+    const dir = el('div'); dir.style.display = 'flex';
+    const capa = btn('btn--ghost btn--sm btn--icon', '', { icon: 'star', title: 'Usar como capa', onclick: async () => { await api(`galeria_albuns?id=eq.${id}`, { method: 'PATCH', body: { capa: f.url } }); toast('Capa atualizada.'); ir('galeria', id); } }); capa.disabled = a.capa === f.url;
+    dir.append(capa,
+      btn('btn--ghost btn--sm btn--icon', '', { icon: 'eye', title: 'Ver em tamanho real', onclick: () => window.open(imgSrc(f.url), '_blank', 'noopener') }),
+      btn('btn--danger btn--sm btn--icon', '', { icon: 'trash', title: 'Apagar foto', onclick: async () => {
+        if (!confirmar('Apagar esta foto?')) return;
+        await api(`galeria_fotos?id=eq.${f.id}`, { method: 'DELETE' });
+        const p = storagePath('galeria', f.url); if (p) await removerArquivos('galeria', [p, p.replace(/\.jpg$/, '-sm.jpg')]);
+        if (a.capa === f.url){ const prox = fotos.find(x => x.id !== f.id); await api(`galeria_albuns?id=eq.${id}`, { method: 'PATCH', body: { capa: prox?.url || null } }); }
+        toast('Foto apagada.'); ir('galeria', id); } }));
+    acts.append(esq, dir); b.append(leg, acts); c.append(box, b); grid.append(c);
+  });
+  const w = el('div', 'stack'); w.append(voltar, head, tip, drop, input, prog, grid);
+  voltar.style.justifySelf = 'start'; head.style.marginBottom = '0';
+  m.replaceChildren(w);
+}
+
+/* =================== MENSAGENS =================== */
+async function viewMensagens(m){
+  const msgs = await api('contatos?select=*&order=created_at.desc&limit=200');
+  const card = el('div', 'card');
+  if (!msgs.length) card.append(el('p', 'empty', 'Nenhuma mensagem recebida.'));
+  msgs.forEach(c => {
+    const d = el('div', `msg${c.lido ? '' : ' unread'}`);
+    const top = el('div', 'msg__top'); const t = el('div'); t.append(el('b', null, c.nome));
+    if (!c.lido) t.append(document.createTextNode(' '), el('span', 'pill pill--new', 'Nova'));
+    top.append(t, el('span', 'help', `${c.assunto} · ${fmtDataHora(c.created_at)}`));
+    const ctt = el('div', 'msg__ctt');
+    const em = el('a', null, c.email); em.href = `mailto:${c.email}?subject=${encodeURIComponent('Re: ' + c.assunto + ' — Multiempresarial')}`;
+    const tl = el('a', null, c.telefone); tl.href = `tel:${String(c.telefone).replace(/\D/g, '')}`;
+    ctt.append(em, tl); if (c.endereco) ctt.append(el('span', 'help', c.endereco));
+    const acts = el('div', 'msg__acts');
+    acts.append(
+      btn('btn--line btn--sm', c.lido ? 'Marcar como não lida' : 'Marcar como lida', { onclick: async () => { await api(`contatos?id=eq.${c.id}`, { method: 'PATCH', body: { lido: !c.lido } }); contarNaoLidas(); ir('mensagens'); } }),
+      btn('btn--danger btn--sm', 'Apagar', { icon: 'trash', onclick: async () => { if (!confirmar(`Apagar a mensagem de ${c.nome}?`)) return; await api(`contatos?id=eq.${c.id}`, { method: 'DELETE' }); contarNaoLidas(); toast('Mensagem apagada.'); ir('mensagens'); } }));
+    d.append(top, ctt, el('p', 'msg__txt', c.mensagem), acts); card.append(d);
+  });
+  m.replaceChildren(cabecalho('Mensagens', 'Recebidas pelo formulário "Fale com a administração". Responda pelo e-mail ou telefone informado.'), card);
+}
+
+/* =================== MINHA CONTA =================== */
+async function viewConta(m){
+  const card = el('div', 'card pad stack'); card.style.maxWidth = '480px';
+  const nova = entrada('', { type: 'password', autocomplete: 'new-password' });
+  const rep = entrada('', { type: 'password', autocomplete: 'new-password' });
+  const erro = el('p', 'help'); erro.setAttribute('role', 'alert');
+  const salvarB = btn('btn--red', 'Trocar senha', { onclick: async () => {
+    erro.style.color = 'var(--red)'; erro.textContent = '';
+    if (nova.value.length < 8) { erro.textContent = 'A senha precisa ter pelo menos 8 caracteres.'; return; }
+    if (nova.value !== rep.value) { erro.textContent = 'As senhas não conferem.'; return; }
+    salvarB.disabled = true;
+    try { await auth('user', { password: nova.value }, await token()); nova.value = rep.value = ''; toast('Senha alterada.'); }
+    catch (e){ erro.textContent = /different|same/i.test(e.message) ? 'A nova senha precisa ser diferente da atual.' : /weak|short/i.test(e.message) ? 'Senha fraca: use letras, números e símbolos.' : `Não foi possível trocar: ${e.message}`; }
+    finally { salvarB.disabled = false; }
+  } });
+  salvarB.style.justifySelf = 'start';
+  card.append(el('p', null, `Usuário: ${sessao.admin?.usuario || ''}`), campo('Nova senha', nova, 'Mínimo de 8 caracteres.'), campo('Repita a nova senha', rep), erro, salvarB);
+  m.replaceChildren(cabecalho('Minha conta', `Conectado como ${sessao.admin?.nome || ''}. Troque a senha provisória no primeiro acesso.`), card);
+}
+
+/* ---------- início ---------- */
+if (sessao?.access_token && sessao?.admin){ token().then(iniciar).catch(() => sair()); }
+else { $('#login').classList.remove('hidden'); setTimeout(() => $('#loginForm').usuario.focus(), 30); }
+addEventListener('hashchange', () => { const v = location.hash.slice(1); if (sessao && v && v !== atual && VIEWS[v]) ir(v); });
+</script>
+</body>
+</html>

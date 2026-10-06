@@ -524,7 +524,7 @@ textarea.ctl{resize:vertical}
     <div class="fword" aria-hidden="true">Multiempresarial</div>
     <div class="legal lbl">
       <span>© <span id="year">2026</span> Condomínio do Edifício Novo Centro Multiempresarial</span>
-      <nav aria-label="Legal"><button data-go="documentos">Política de Privacidade</button><button data-go="documentos">LGPD</button></nav>
+      <nav aria-label="Legal"><button data-go="documentos">Política de Privacidade</button><button data-go="documentos">LGPD</button><a href="admin" rel="nofollow">Administração</a></nav>
     </div>
   </div>
 </footer>
@@ -812,7 +812,7 @@ const SLOTS_D = [[50,63,30,16/10,0,40,0],[17,50,15,4/3,-30,-20,-8],[22,82,17,16/
 const SLOTS_M = [[50,71,82,16/10,0,40,0],[22,36,34,4/3,-40,-20,-8],[78,38,30,3/4,40,-20,9],[24,88,36,16/11,-40,30,6],[78,88,34,1,40,30,-6],[50,20,0,1,0,0,0],[50,20,0,1,0,0,0]];
 let exItems = [], exI = 0, exExpanded = false;
 // versão menor (800px) das fotos do site, para os quadros pequenos do mosaico
-const small = u => /^assets\/galeria\/.+\.jpg$/.test(u) ? u.replace(/\.jpg$/, '-sm.jpg') : u;
+const small = u => /^assets\/galeria\/.+\.jpg$|\/storage\/v1\/object\/public\/galeria\/.+\.jpg$/.test(u) ? u.replace(/\.jpg$/, '-sm.jpg') : u;
 function tileFill(node, g, k, detail, full = k === 0){
   node.replaceChildren();
   const extra = detail && safeHref(g?.fotos?.[2]?.url);
