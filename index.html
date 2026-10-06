@@ -116,7 +116,7 @@ html:not(.js) .lines .ln>span{transform:none}
 .corner img{width:100%;height:100%;object-fit:cover}
 .corner--l{left:3%;transform:rotate(-2deg)}
 .corner--r{right:3%;aspect-ratio:5/4;transform:rotate(2deg)}
-.corner--r img{object-position:85% 50%}
+.corner--r img{object-position:60% 50%}
 .hero__cta .pill--glass{background:rgba(12,34,30,.38);color:#fff}
 .hero__cta .pill--glass:hover{background:rgba(12,34,30,.55)}
 .hero__cta{position:absolute;z-index:2;left:0;right:0;bottom:28px;display:flex;justify-content:center;gap:6px;white-space:nowrap}
@@ -180,7 +180,7 @@ html:not(.js) .lines .ln>span{transform:none}
 @media (min-width:960px){.vault__l p{margin-right:0}}
 .arch{position:relative;width:min(400px,82vw);aspect-ratio:3/4.1}
 .arch__f{position:absolute;inset:0;border-radius:999px 999px 6px 6px;overflow:hidden;background:#2a2522}
-.arch__f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 50%;filter:brightness(.55) saturate(.9)}
+.arch__f img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 50%;filter:brightness(.55) saturate(.9)}
 .arch__f::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,17,.1) 30%,rgba(20,18,17,.85))}
 .av{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:20% 11% 26%;gap:10px;transition:opacity .5s,transform .7s var(--spring),filter .5s}
 .av.out{opacity:0;transform:translateY(14px);filter:blur(6px)}
@@ -229,7 +229,7 @@ a.drow:hover .drow__b{transform:translate(3px,-3px)}
 .card--obs{background:radial-gradient(120% 90% at 85% 10%,var(--teal-3),var(--teal-4) 45%,#121a18 100%);color:var(--cream)}
 .card--obs p{color:var(--mut-d)}
 .card--obs .ph{position:absolute;right:-4%;top:-6%;width:46%;aspect-ratio:3/4;border-radius:999px 999px 6px 6px;overflow:hidden;opacity:.5}
-.card--obs .ph img{width:100%;height:100%;object-fit:cover;object-position:70% 50%}
+.card--obs .ph img{width:100%;height:100%;object-fit:cover;object-position:78% 50%}
 .card--line{box-shadow:inset 0 0 0 1px var(--line-l);background:rgba(255,255,255,.35)}
 .card .btns{display:flex;flex-wrap:wrap;gap:8px}
 .dl li a,.dl li div{display:flex;align-items:center;gap:12px;padding:15px 2px;border-bottom:1px solid var(--line-l);font-size:14px;transition:padding .5s var(--spring)}
@@ -391,8 +391,8 @@ textarea.ctl{resize:vertical}
     <div class="rock-anchor" id="rockHero"><div class="rock-fb"></div></div>
     <p class="note note--l rv gate" style="--d:700ms">800 salas comerciais no centro de Brasília</p>
     <p class="note note--r rv gate" style="--d:800ms">SRTVS Quadra 701<br>Bloco O</p>
-    <div class="corner corner--l rv gate" style="--d:900ms;--y:40px"><img src="assets/hero/fachada.jpg" alt="Fachada do Edifício Novo Centro Multiempresarial" width="800" height="515"></div>
-    <div class="corner corner--r rv gate" style="--d:1000ms;--y:40px"><img src="assets/hero/fachada.jpg" alt="" width="800" height="515"></div>
+    <div class="corner corner--l rv gate" style="--d:900ms;--y:40px"><img src="assets/galeria/fachada/placa-bloco-o-sm.jpg" alt="Placa do Novo Centro Multiempresarial, Bloco O" width="600" height="800"></div>
+    <div class="corner corner--r rv gate" style="--d:1000ms;--y:40px"><img src="assets/galeria/fachada/fachada-arvores-sm.jpg" alt="Fachada do Edifício Novo Centro Multiempresarial" width="800" height="600"></div>
     <div class="hero__cta lbl rv gate" style="--d:1100ms">
       <button class="pill pill--red lg" data-contact>Fale com a administração</button>
       <button class="pill pill--glass lg" data-go="avisos">Ver avisos</button>
@@ -429,7 +429,7 @@ textarea.ctl{resize:vertical}
         <p class="rv">Fique por dentro das informações importantes do condomínio.</p>
       </div>
       <div class="arch rv" style="--y:40px">
-        <div class="arch__f"><img src="assets/hero/fachada.jpg" alt="" loading="lazy"></div>
+        <div class="arch__f"><img src="assets/galeria/fachada/entrada-acesso.jpg" alt="" loading="lazy"></div>
         <div id="avSlot" aria-live="polite"></div>
         <div class="arch__btns">
           <button class="rnd l" id="avPrev" aria-label="Aviso anterior"><svg class="ic"><use href="#i-arrow"/></svg></button>
@@ -460,7 +460,7 @@ textarea.ctl{resize:vertical}
 
     <div class="shell cd">
       <div class="card card--obs rv" id="classificados" style="--y:40px">
-        <div class="ph" aria-hidden="true"><img src="assets/hero/fachada.jpg" alt="" loading="lazy"></div>
+        <div class="ph" aria-hidden="true"><img src="assets/galeria/fachada/fachada-frontal-sm.jpg" alt="" loading="lazy"></div>
         <div style="position:relative">
           <span class="lbl" style="color:rgba(243,238,231,.55)">Classificados</span>
           <h2 class="serif">Salas para venda<br><i>e locação</i> no edifício.</h2>
@@ -608,7 +608,14 @@ const sb = (path, opts = {}) => fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
 /* ---------- Conteúdo de reserva (usado se o banco não responder) ---------- */
 let AVISOS = [];
 let GALERIA = [
-  { titulo:'Fachada', ano:null, descricao:'O Edifício Novo Centro Multiempresarial, no Setor de Rádio e TV Sul.', tags:['Edifício','SRTVS'], capa:'assets/hero/fachada.jpg', fotos:[{url:'assets/hero/fachada.jpg'}] },
+  { titulo:'Fachada', ano:null, descricao:'O Edifício Novo Centro Multiempresarial, no Setor de Rádio e TV Sul.', tags:['Edifício','SRTVS'], capa:'assets/galeria/fachada/fachada-frontal.jpg', fotos:[
+    { url:'assets/galeria/fachada/fachada-frontal.jpg', legenda:'Vista frontal do edifício' },
+    { url:'assets/galeria/fachada/fachada-arvores.jpg', legenda:'Fachada vista do canteiro' },
+    { url:'assets/galeria/fachada/placa-bloco-o.jpg', legenda:'Placa de identificação — Bloco O' },
+    { url:'assets/galeria/fachada/entrada-acesso.jpg', legenda:'Acesso de veículos e marquise de entrada' },
+    { url:'assets/galeria/fachada/embarque-desembarque.jpg', legenda:'Área de embarque e desembarque' },
+    { url:'assets/galeria/fachada/area-externa.jpg', legenda:'Área externa em frente à entrada' },
+  ] },
   { titulo:'Centro de Convenções', ano:null, descricao:'Espaço para eventos, reuniões e convenções.', tags:['Eventos','Convenções'], capa:null, fotos:[] },
   { titulo:'Eventos', ano:null, descricao:'Registros dos eventos realizados no condomínio.', tags:['Eventos'], capa:null, fotos:[] },
   { titulo:'Estacionamento Rotativo', ano:null, descricao:'Estacionamento rotativo para condôminos e visitantes.', tags:['Estacionamento'], capa:null, fotos:[] },
@@ -781,10 +788,13 @@ const PH = ['#356d60', '#605346', '#711b16', '#9e8d7b', '#1b3630', '#3b342c'];
 const SLOTS_D = [[50,63,30,16/10,0,40,0],[17,50,15,4/3,-30,-20,-8],[22,82,17,16/11,-25,30,6],[80,47,14,3/4,30,-25,9],[82,82,18,16/10,25,30,-6],[65,27,11,4/3,15,-35,7],[33,25,10,1,-15,-35,-9]];
 const SLOTS_M = [[50,71,82,16/10,0,40,0],[22,36,34,4/3,-40,-20,-8],[78,38,30,3/4,40,-20,9],[24,88,36,16/11,-40,30,6],[78,88,34,1,40,30,-6],[50,20,0,1,0,0,0],[50,20,0,1,0,0,0]];
 let exItems = [], exI = 0, exExpanded = false;
-function tileFill(node, g, k, detail){
+// versão menor (800px) das fotos do site, para os quadros pequenos do mosaico
+const small = u => /^assets\/galeria\/.+\.jpg$/.test(u) ? u.replace(/\.jpg$/, '-sm.jpg') : u;
+function tileFill(node, g, k, detail, full = k === 0){
   node.replaceChildren();
-  const capa = safeHref(g?.capa);
-  if (capa){ const im = el('img'); im.src = capa; im.alt = ''; im.loading = 'lazy'; if (detail) im.style.objectPosition = '88% 40%'; node.append(im); node.style.background = ''; }
+  const extra = detail && safeHref(g?.fotos?.[2]?.url);
+  const capa = extra || safeHref(g?.capa);
+  if (capa){ const im = el('img'); im.src = full ? capa : small(capa); im.alt = ''; im.loading = 'lazy'; if (detail && !extra) im.style.objectPosition = '88% 40%'; node.append(im); node.style.background = ''; }
   else { node.style.background = `linear-gradient(160deg, ${PH[k % PH.length]}, #171413)`; node.append(el('span', 'ph', g?.titulo || '')); }
   if (capa && g?.titulo) node.append(el('span', 'cap', detail ? 'SRTVS · Bloco O' : g.titulo));
 }
@@ -807,7 +817,7 @@ function exStep(d){
   exI = (exI + d + GALERIA.length) % GALERIA.length;
   const c = exItems[0]?.node; if (!c) return;
   c.animate([{ opacity: 1 }, { opacity: .2 }, { opacity: 1 }], { duration: 600, easing: 'ease-in-out' });
-  setTimeout(() => tileFill(c, GALERIA[exI], exI, false), 260);
+  setTimeout(() => tileFill(c, GALERIA[exI], exI, false, true), 260);
   exCaption();
 }
 $('#exPrev').onclick = () => exStep(-1);
